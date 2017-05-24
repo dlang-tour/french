@@ -1,58 +1,54 @@
-# Welcome to D
+# Bienvenue
 
-Welcome to the interactive tour of the *D Programming language*.
+Bienvenu dans cette visite interactive du *langage de programmation D*
 
 {{#dmanmobile}}
 
-This tour gives an overview of this __powerful__ and __expressive__
-language which compiles directly to __efficient__, __native__ machine code.
+Cette visite va vous donner un aperçu de ce langage __puissant__ et __expressif__ qui compile vers des exécutables __natifs__ et __performants__.
 
 {{/dmanmobile}}
 
-### What is D?
+### Qu'est-ce que le langage D ?
 
-D is the culmination of _decades of experience implementing compilers_
-for many diverse languages and has a large number of
-[unique features](http://dlang.org/overview.html):
+Le D est le résultat de _décennies d'expérience dans la conception de compilateurs_ pour de nombreux langages, et c'est langage aux [fonctionnalités uniques](http://dlang.org/overview.html): 
 
 {{#dmandesktop}}
 
-- _high level_ constructs for great modeling power
-- _high performance_, compiled language
-- static typing
-- evolution of C++ (without the mistakes)
-- direct interface to the operating system API's and hardware
-- blazingly fast compile-times
-- allow memory-safe programming (SafeD)
-- _maintainable_, _easy to understand_ code
-- short learning curve (C-like syntax, similar to Java and others)
-- compatible with C application binary interface
-- multi-paradigm (imperative, structured, object oriented, generic, functional programming purity, and even assembly)
-- built-in error prevention (contracts, unittests)
+- des constructions _haut niveau_ pour des modélisations puissantes
+- un langage _compilé_ et _performant_
+- typage statique
+- amélioration du C++ (sans les erreurs)
+- interfacage direct avec l'API du système d'exploitation et le matériel
+- compilation incroyablement rapide
+- permet une gestion correcte de la mémoire (SafeD)
+- du code _maintenable_ et _lisible_
+- une courbe d'apprentissage courte (syntaxe similiare au C, à Java et à d'autres)
+- interfacable avec des librairies C
+- multi-paradigme (impératif, structuré, orienté objet, généric, fonctionnel et même assembleur)
+- prévention des erreurs intégrées (contrats, tests unitaires)
 
 ... and many more [features](http://dlang.org/overview.html).
+... et beaucoup d'autres [fonctionnalités](http://dlang.org/overview.html)
 
 {{/dmandesktop}}
 
-### About the tour
+### À propos de cette visite
 
-Each section comes with a source code example that can be modified and used
-to experiment with D's language features.
-Click the run button (or `Ctrl-enter`) to compile and run it.
+Chaque partie est accompagnée du code d'exemple qui peut être modifié pour vous faire votre propre expérience du D.
+Cliquez sur le bouton "run" (ou appuyez sur `Ctrl+Entrée`) pour exécuter le code.
 
-### Contributing
+### Contribuer
 
-This tour is [open source](https://github.com/dlang-tour)
-and we are glad about pull requests making this tour even better.
+Cette visite est [open-source](https://github.com/dlang-tour) and nous accueillons toutes les contributions pour rendre cette visite encore meilleure.
 
 ## {SourceCode}
 
 ```d
 import std.stdio;
 
-// Let's get going!
+// Allons-y !
 void main()
 {
-    writeln("Hello World!");
+    writeln("Bonjour tout le monde !");
 }
 ```
