@@ -29,16 +29,16 @@ Utiliser l'opérateur de *tranchage* permet de récupérer une tranche pointant 
 Dans un expression `origine[start..end]`, l'opérateur de tranchage est utilisé pour obtenir une tranche de tous les élements d'`origine` de `start` à l'élément **avant** `end`:
 
 ```d
-auto newTab = tab[1 .. 4]; // l'élément d'index 4 n'est PAS inclus
+auto newTab = tab[1 .. 4]; // l'élément d'indexe 4 n'est PAS inclus
 assert(newTab.length == 3);
 newTab[0] = 10; // change newTab[0], soit tab[1]
 ```
 
-Ces tranches créent une nouvelle vue sur une zone de mémoire déjà existante. Elles ne créent pas une nouvelle copie. Si il n'y a plus de tranche qui référence cette zone de mémoire, ou sur une partie de cette zone, elle sera libérée par le ramasse-miettes.
+Ces tranches créent une nouvelle vue sur une zone de mémoire déjà existante. Elles ne créent pas une nouvelle copie. S'il n'y a plus de tranche qui référence cette zone de mémoire, ou sur une partie de cette zone, elle sera libérée par le ramasse-miettes.
 
-En utilisant les tranches, il est possible d'écrire du code très efficace pour des choses (les parsers par exemple) qui n'opèrent que sur une zone mémoire, et tranche uniquement la partie sur laquelle elle doit travailler. De cette façon, on éviter d'allouer des nouveaux blocs en mémoire.
+En utilisant les tranches, il est possible d'écrire du code très efficace pour des choses (les parsers par exemple) qui n'opèrent que sur une zone mémoire, et tranche uniquement la partie sur laquelle elle doit travailler. De cette façon, on évite d'allouer des nouveaux blocs en mémoire.
 
-Comme nous l'avons vu dans la partie précédente, l'expression `[$]` est une forme raccourcie de `tab.length`. Donc `tab[$]` représente l'élément juste après le dernier de la tranche, and générerait donc une `RangeError` (si les vérifications d'accès par index n'ont pas été désactivées).
+Comme nous l'avons vu dans la partie précédente, l'expression `[$]` est une forme raccourcie de `tab.length`. Donc `tab[$]` représente l'élément juste après le dernier de la tranche, et générerait une `RangeError` (si les vérifications d'accès par indexe n'ont pas été désactivées).
 
 ### Pour aller plus loin
 
