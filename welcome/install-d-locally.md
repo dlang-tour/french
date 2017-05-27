@@ -31,7 +31,7 @@ Des paquets sont fournis pour plusieurs distributions:
 ### Autres compilateurs
 
 En plus du compilateur de référence, qui utilise son propre backend, il y a deux autres
-compilateurs qui peuvent être récupéré sur la page de téléchargement de [dlang.org](https://dlang.org):
+compilateurs qui peuvent être récupérés sur la page de téléchargement de [dlang.org](https://dlang.org):
 
 * [**GDC**](http://gdcproject.org/downloads) qui utilise le backend GCC
 * [**LDC**](https://github.com/ldc-developers/ldc#installation) qui utilise le backend LLVM
