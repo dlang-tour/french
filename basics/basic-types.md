@@ -1,6 +1,6 @@
 # Types fondamentaux
 
-Un certains nombre de types fondamentaux sont définis en D, et ils ont la particularité de tous avoir la même taille **quelque soit** la plateforme (à l'exception du type `real` qui est un nombre flottant de la plus grande précision possible).
+Un certains nombre de types fondamentaux sont définis en D, et ils ont la particularité de tous avoir la même taille **quelle que soit** la plateforme (à l'exception du type `real` qui est un nombre à virgule flottante de la plus grande précision possible).
 Il n'y a pas de différences entre la taille d'un entier, que le programme soit compilé sur un système 32-bits ou 64-bits.
 
 
@@ -22,11 +22,11 @@ Il n'y a pas de différences entre la taille d'un entier, que le programme soit 
 
 Le préfixe `u` désigne les types *non-signés*. `char` représente un caractère UTF-8, `wchar` est utilisé dans les chaînes de caractères UTF-16 et `dchar` est utilisé dans les chaînes de caractères UTF-32.
 
-Une conversion entre deux variables de types différents n'est autorisée par le compilateur que si elle possible sans perte de précision. Cependant, la conversion entre les types flottants (par exemple de `double` à `float`) est autorisée.
+Une conversion entre deux variables de types différents n'est autorisée par le compilateur que si elle est possible sans perte de précision. Cependant, la conversion entre les types flottants (par exemple de `double` à `float`) est autorisée.
 
-Une conversion vers un autre type peut être forcée en utilisant l'expression `cast(TYPE) myVar`. Il faut faut l'utiliser prudemment car l'expression `cast` est autorisée à casser le système de typage.
+Une conversion vers un autre type peut être forcée en utilisant l'expression `cast(TYPE) myVar`. Il faut l'utiliser prudemment car l'expression `cast` est autorisée à casser le système de typage.
 
-Le mot-clé `auto` créé une variable est déduit son type à partir l'expression qu'on lui assigne. `auto myVar = 7` va déduire que `myVar` est de type `int`. Le type reste à assigné au moment de la compilation et ne peut pas être changé, comme n'importe quelle variable avec un titre explicite.
+Le mot-clé `auto` créé une variable est déduit son type à partir l'expression qu'on lui assigne. `auto myVar = 7` va déduire que `myVar` est de type `int`. Le type reste à assigner au moment de la compilation et ne peut pas être changé, comme n'importe quelle variable avec un titre explicite.
 
 ### Propriétés des types
 
@@ -38,9 +38,9 @@ Les flottants ont également une propriété `.nan` (valeur indéfinie), `.infin
 
 Chaque type a également une propriété `.stringof` qui retourne son nom sous la forme d'une chaîne de caractères.
 
-### Indexs en D
+### Indexes en D
 
-En D, les indexs ont généralement le type `size_t`, un type assez grand pour représenter n'importe quelle adresse en mémoire, c'est à dire un `uint` sur les systèmes 32-bits et un `ulong` sur les systèmes 64-bits.
+En D, les indexes ont généralement le type `size_t`, un type assez grand pour représenter n'importe quelle adresse en mémoire, c'est à dire un `uint` sur les systèmes 32-bits et un `ulong` sur les systèmes 64-bits.
 
 ### Les expressions assert
 
