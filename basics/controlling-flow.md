@@ -13,7 +13,7 @@ if (a == 5){
 ```
 
 Quand un bloc `if` ou `else` ne contient qu'une instruction,
-les crochets sont optionnels.
+les accolades sont optionnelles.
 
 D a les mêmes opérateurs que C/C++ et Java pour comparer des variables:
 
@@ -27,7 +27,7 @@ D a également une structure `switch`..`case` qui exécute un cas en fonction
 de la valeur d'*une* variable. `switch` fonctionne avec les types fondamentaux 
 comme avec les chaînes de caractères !
 Il est même possible de définir des intervalles pour les types entiers en utilisant
-la syntaxe `case START: .. case END:`. N'oubliez pas de jeter un oeil au code source d'exemple.
+la syntaxe `case START: .. case END:`. N'oubliez pas de jeter un coup d'œil au code source d'exemple.
 
 ### Pour aller plus loin
 
