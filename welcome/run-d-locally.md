@@ -16,7 +16,7 @@ Il existe beaucoup d'options qui vous permettent de modifier le
 comportement de *DMD*. Explorez la [documentation](https://dlang.org/dmd.html#switches)
 ou exécutez `dmd --help` pour un aperçu des options disponibles.
 
-### Compilation "on-the-fly" avec `rdmd`
+### Compilation à la volée avec `rdmd`
 
 L'utilitaire `rdmd`, fourni avec *DMD*, compile un programme et 
 ses dépendances puis exécute automatiquement le résultat:
