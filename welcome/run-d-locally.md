@@ -18,7 +18,7 @@ ou exécutez `dmd --help` pour un aperçu des options disponibles.
 
 ### Compilation "on-the-fly" avec `rdmd`
 
-L'utilitaire `rdmd`, fourni avec le *DMD*, compile un programme et 
+L'utilitaire `rdmd`, fourni avec *DMD*, compile un programme et 
 ses dépendances puis exécute automatiquement le résultat:
 
   rdmd hello.d
@@ -27,7 +27,7 @@ Sur les systèmes UNIX, la ligne spéciale `#!/usr/bin/env rdmd` pour être
 mis en première ligne d'un fichier D pour pouvoir utiliser ce dernier
 comme un script.
 
-Explorez le [documentation](https://dlang.org/rdmd.html) ou exécutez
+Explorez la [documentation](https://dlang.org/rdmd.html) ou exécutez
 `rdmd --help` pour plus d'informations sur les options.
 
 ### Le gestionnaire de dépendances `dub`
