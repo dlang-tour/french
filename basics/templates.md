@@ -33,7 +33,7 @@ add(a, c); // On déduit que `T` est un `float`
 
 Une fonction peut avoir un nombre arbitraire de paramètres de substitution qui sont spécifiés à l'instanciation en utilisant la syntaxe `fonction!(T1, T2 ...)`. Les paramètres de substitution peuvent être de n'importe quel type de base, y compris des `string`s et des nombres à virgule flottante.
 
-Contrairement aux génériques en Java, les modèles en D ne fonctionnent qu'à la compilation, et génèrent du code optimisé et taillé sur mesure pour l'ensemble de types sur lesquels la fonction est appellée.
+Contrairement aux génériques en Java, les modèles en D ne fonctionnent qu'à la compilation, et génèrent du code optimisé et taillé sur mesure pour l'ensemble de types sur lesquels la fonction est appelée.
 
 Bien sûr, on peut également définir des patrons à partir de `struct`, de `class` et d'`interface`:
 
