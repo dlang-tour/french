@@ -1,14 +1,16 @@
 # Passage de messages
 
-À la placede gérer le parallélisme et la synchronisation ça la main, D permet d'utiliser le *passage de messages* pour exploiter le puissance des CPU à plusieurs coeurs. Les threads communiquent avec des *messages*, qui contiennent des valeurs arbitraires, pour se partager le travail et se synchroniser. Ils s'interdisent de partager des données pour éviter beaucoup de problèmes liés au parallélisme.
+À la place de gérer le parallélisme et la synchronisation à la main, D permet d'utiliser le *passage de messages* pour exploiter le puissance des CPU à plusieurs coeurs. Les threads communiquent avec des *messages*, qui contiennent des valeurs arbitraires, pour se partager le travail et se synchroniser. Ils s'interdisent de partager des données pour éviter beaucoup de problèmes liés au parallélisme.
 
-Toutes les fonctions qui implémentent le passage de messages en D peuvent être trouvées dans le module [`std.concurrency`](https://dlang.org/phobos/std_concurrency.html). `spawn` créé un nouveau thread à partir d'une fonction fournie par l'utilisateur:
+Toutes les fonctions qui implémentent le passage de messages en D peuvent être trouvées dans le module [`std.concurrency`](https://dlang.org/phobos/std_concurrency.html). 
+
+`spawn` créé un nouveau thread à partir d'une fonction fournie par l'utilisateur:
 
 ```d
 auto threadId = spawn(&foo, thisTid);
 ```
 
-`thisTid` est une variable définie dans `std.concurrency` qui fait référence au thread actuel, ce qui est nécessaire pour le passage de messages. `spawn` prend une fonction en premier argument et un nombre arbitraire d'autres arguments qui fonctionnent comme argument de la fonction.
+`thisTid` est une variable définie dans `std.concurrency` qui fait référence au thread actuel, une information nécessaire pour le passage de messages. `spawn` prend une fonction en premier argument et un nombre arbitraire d'autres arguments qui fonctionnent comme arguments de la fonction.
 
 ```
 void foo(Tid parentTid)
@@ -38,7 +40,7 @@ assert(text == "Done");
 
 La famille des fonctions  `receive` bloque l'exécution du thread jusqu'à récéption d'un message dans sa "boite aux lettres".
 
-### In-depth
+### Pour aller plus loin
 
 - [Échanger des messages entre thread](http://www.informit.com/articles/article.aspx?p=1609144&seqNum=5)
 - [La concurrence par passage de messages](http://ddili.org/ders/d.en/concurrency.html)
@@ -107,7 +109,7 @@ void worker(Tid parentId)
 void main()
 {
     Tid threads[];
-=    // Créé 10 threads fils.
+    // Créé 10 threads fils.
     for (size_t i = 0; i < 10; ++i) {
         threads ~= spawn(&worker, thisTid);
     }
@@ -128,7 +130,7 @@ void main()
         send(tid, CancelMessage());
     }
 
-=    // Et on attend que tous les threads aient
+    // Et on attend que tous les threads aient
     // confirmé leur arrêt
     foreach(ref tid; threads) {
         receiveOnly!CancelAckMessage;
