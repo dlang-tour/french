@@ -1,6 +1,6 @@
 # Stockage par thread
 
-L'attribut `static` permet de déclarer des objets qui ne sont initialisés qu'une seule fois. Si la même ligne est exécuté une deuxième fois, l'initialisation sera ignorée. Chaque thread a son propre objet `static` (*SPT - stockage par thread*) et ne pourra pas modifier les variables statiques d'un autre thread, même si elles portent le même nom. `static` permet donc de déclarer des objets globaux pour le thread *courant*.
+L'attribut `static` permet de déclarer des objets qui ne sont initialisés qu'une seule fois. Si la même ligne est exécutée une deuxième fois, l'initialisation sera ignorée. Chaque thread a son propre objet `static` (*SPT - stockage par thread*) et ne pourra pas modifier les variables statiques d'un autre thread, même si elles portent le même nom. `static` permet donc de déclarer des objets globaux pour le thread *courant*.
 
 C'est différent de Java et C/C++ par exemple, où `static` signifie global pour toute l'application, entrainant des problèmes de synchronisations dans les programmes multi-threadés.
 
