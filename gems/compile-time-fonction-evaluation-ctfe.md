@@ -73,10 +73,10 @@ auto sqrt(T)(T x) {
 
 void main() {
     double n = 4.0;
-    writeln("La racine carrée de 4 à l'exécution = ",
+    writeln("sqrt(4) à l'exécution = ",
         sqrt(n));
     static cn = sqrt(4.0);
-    writeln("La racine carrée de 4 à la compilation = ",
+    writeln("sqrt(4) à la compilation = ",
         cn);
 }
 ```

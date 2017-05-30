@@ -138,8 +138,8 @@ public:
 void main()
 {
     auto vec = Vector3!double(3,3,3);
-    // Ca ne fonctionne pas à cause de la contrainte
-    // de modèle
+    // Ca ne fonctionne pas à cause de la
+    // contrainte de modèle
     // Vector3!string illegal;
 
     auto vec2 = Vector3!double(4,4,4);
@@ -151,7 +151,7 @@ void main()
     // flottante
     // vecInt.dot(Vector3!int(0,0,0));
 
-    // getter et setters générés automatiquement!
+    // getter et setters générés automatiquement
     vecInt.setX(3);
     vecInt.setZ(1);
     writeln(vecInt.getX, ",",

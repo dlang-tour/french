@@ -98,12 +98,14 @@ vers des exécutables binaires performantes};
       // conversion en tableau pour trier
       .array()
       .sort()
-      // on a pas besoin de mots  dupliqué hein ?
+      // on a pas besoin de mots  dupliqué 
+      // hein ?
       .uniq()
       // met tous les mots qui ont le même 
-      // nombre de caractère dans une seule colonne. 
-      // chunkBy nous aide en générant des ranges
-      // de range.
+      // nombre de caractère dans une seule 
+      // colonne. 
+      // chunkBy nous aide en générant des 
+      // ranges de range.
       .chunkBy!(a => a[0])
       // Ces éléments seront liés en
       // une seule ligne

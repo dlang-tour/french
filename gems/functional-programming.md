@@ -61,10 +61,10 @@ void main()
     import std.functional : memoize;
     import std.stdio : writefln, writeln;
 
-    // memoize met en cache le résultat de la fonction
-    // en fonction des valeurs fournies en entrée.
-    // Les fonctions pures fonctionnent très
-    // bien avec ça !
+    // memoize met en cache le résultat de la 
+    // fonction en fonction des valeurs fournies
+    // en entrée. Les fonctions pures 
+    // fonctionnent très bien avec ça !
     alias fastBigPow = memoize!(bigPow);
 
     void test()
@@ -76,6 +76,6 @@ void main()
     foreach (i; 0 .. 10)
         benchmark!test(1)[0]
         	.to!("msecs", double)
-        	.writeln("ça a pris: millisecondes");
+        	.writeln("ça a pris:millisecondes");
 }
 ```

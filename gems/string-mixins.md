@@ -27,11 +27,11 @@ auto calculate(string op, T)(T lhs, T rhs)
 
 void main()
 {
-    // Une toute nouvelle façon de dire bonjour !
+    // Une toute nouvelle façon de dire bonjour!
     mixin(`writeln("Hello World");`);
 
-    // passe l'opération à effectuer en paramètre
-    // de schéma.
+    // passe l'opération à effectuer 
+    // en paramètre de modèle.
     writeln("5 + 12 = ", calculate!"+"(5,12));
     writeln("10 - 8 = ", calculate!"-"(10,8));
     writeln("8 * 8 = ", calculate!"*"(8,8));

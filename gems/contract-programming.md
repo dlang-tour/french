@@ -111,7 +111,8 @@ struct Date {
     Représentation d'une date dans le format
     AAAA-JJ-MM en chaîne de caractères
 
-    Returns: Une représentation en `string` de `Date`
+    Returns: Une représentation en `string` de 
+    `Date`
     */
     string toString() const
     out (result) {
@@ -139,8 +140,9 @@ void main() {
     auto date = Date(2016, 2, 7);
 
     // Cela fera échouer l'appel à invariant()
-    // Ne validez pas les entrées utilisateurs avec
-    // des contrats, utilisez plutôt des exceptions
+    // Ne validez pas les entrées utilisateurs 
+    // avec des contrats, utilisez plutôt des 
+    // exceptions
     date.fromString("2016-13-7");
 
     date.writeln;
