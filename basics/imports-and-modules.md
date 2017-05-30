@@ -21,3 +21,4 @@ void main()
     // ou import std.stdio : writeln;
     writeln("Bonjour le monde !");
 }
+```

@@ -74,10 +74,10 @@ import std.string : format;
 
 void main()
 {
-    string text = q{Ceci vous donnera un aperçu
+    string text = q"<Ceci vous donnera un aperçu
 de la puissance et de l'expressivité de ce
 langage de programmation système, qui compiler
-vers des exécutables binaires performantes};
+vers des exécutables binaires performantes>";
 
     // prédicat de séparation
     alias pred = c => canFind(" ,.\n", c);

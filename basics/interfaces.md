@@ -63,7 +63,6 @@ interface Animal {
     NVI pattern. Utilise faireBruit en interne
     pour customiser le comportement des
     classes filles
-    */
     
     Params: 
         n =  nombre de répétitions
