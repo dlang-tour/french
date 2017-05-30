@@ -1,6 +1,6 @@
 # Uniform Function Call Syntax (UFCS)
 
-L'**UFCS** est une des fonctionnalités clés de D, qui permet la réutilisabilité du code avec une bonne encapsulation.
+L'**UFCS** est une des fonctionnalités clés de D, qui permet la réutilisabilité du code et une bonne encapsulation.
 
 L'UFCS permet d'appeller n'importe quelle fonction `fun(a)` avec la syntaxe `a.fun()`.
 
@@ -25,7 +25,7 @@ import std.uni : toLower;
 "D est génial !".toLower; // "d est génial !"
 ```
 
-L'UFCS est particulièrmeent important quand on travaille avec les *ranges*, sur lesquelles on peut enchainer plusieurs opérations complexes, avec un style clair et maintenable.
+L'UFCS est particulièrement utile quand on travaille avec les *ranges*, sur lesquelles on peut enchainer plusieurs opérations complexes, avec un style clair et maintenable.
 
 ```d
 import std.algorithm : group;
