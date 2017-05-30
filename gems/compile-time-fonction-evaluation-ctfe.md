@@ -1,6 +1,6 @@
 # Évaluation de fonction à la compilation (CTFE)
 
-La CTFE est un mécanisme qui permet au compilateur d'exécuter une fonction au moment de la **compilation**. Il n'est pas nécessaire de programmer d'une certaine façon pour utiliser cette fonctionnalité. Il suffit qu'une fonction prenne en arguments des valeurs connues à la compilations, et le compilateur D peut décider d'interpréter cette fonction à la compilation.
+La CTFE est un mécanisme qui permet au compilateur d'évaluer une fonction au moment de la **compilation**. Il n'est pas nécessaire de programmer les fonctions différement pour utiliser cette fonctionnalité. Il suffit qu'une fonction prenne en arguments des valeurs connues à la compilations, et le compilateur D peut décider d'interpréter cette fonction à ce moment.
 
 ```d
 // Le résultat peut être calculé à
@@ -14,13 +14,13 @@ Les mots clés comme `static`, `immutable` ou `enum` indiquent au compilateur d'
 
 ```d
 int n = faireQqchALexecution();
-// Même fonction que ci-dessus mais
-// cette fois, juste appellée à 
+// Même fonction qu'avant mais
+// cette fois, juste appelée à 
 // l'exécution
 auto val = sqrt(n);
 ```
 
-Un exemple parfait en D est la librairie [`std.regex`](https://dlang.org/phobos/std_regex.html). Elle vourni un type `ctRegex` qui utilises les *string mixins* et la CTFE pour générer des automates d'expression régulières ultra optimisés à la compilation. Le même code peut être réutilisé pour la version disponible à l'exécution `regex` qui permet de compiler des expressions régulières pendant l'exécution.
+Un exemple parfait en D est la librairie [`std.regex`](https://dlang.org/phobos/std_regex.html). Elle fourni un type `ctRegex` qui utilises les *string mixins* et la CTFE pour générer des automates d'expressions régulières ultra optimisés à la compilation. Le même code peut être réutilisé pour l'autre version `regex` qui permet de compiler des expressions régulières pendant l'exécution.
 
 ```d
 auto compileRegex = ctRegex!(`^.*/([^/]+)/?$`);
@@ -45,7 +45,7 @@ import std.stdio : writeln;
 
 /*
 Calcule la racine carrée d'un nombre
-en utilisant la méthode de Newtong.
+en utilisant la méthode de Newton.
 
 Params:
     x = le nombre dont on veut la racine carrée
@@ -53,12 +53,13 @@ Params:
 Returns: racine carrée de x
 */
 auto sqrt(T)(T x) {
-    // notre seuil de précision pour arrêter
-    // l'approximation parce que nous pensons que
-    // l'amélioration ne vaut pas une autre
-    // itération
+    // seuil à partir duquel affiner
+    // l'approximation ne vaut pas 
+    // une autre itération
     enum GoodEnough = 0.01;
+
     import std.math : abs;
+    
     // Choisir des bonnes valeurs de départ.
     T z = x*x, old = 0;
     int iter;
