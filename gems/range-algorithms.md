@@ -2,18 +2,18 @@
 
 Les modules de la librairie standard [std.range](http://dlang.org/phobos/std_range.html) et [std.algorithm](http://dlang.org/phobos/std_algorithm.html) fournissent une multitude de fonctions qui peuvent être composées pour former des opérations complexes de façon lisible, et ce en se basant sur les *ranges*.
 
-Le grand avantage de ces algorithmes est que vous avez juste à définir votre propre range et vous pourrez directement profiter de toute la puissance de la librairie standard.
+Le grand avantage de ces algorithmes est qu'il suffit de définir votre propre range et vous pourrez directement profiter de toute la puissance de la librairie standard.
 
 ### std.algorithm
 
-`filter` — À partir d'un lambda en paramètre de schéma, génère une nouvelle range qui filtre les éléments:
+`filter` — À partir d'un lambda en paramètre de modèle, génère une nouvelle range d'éléments qui retournent vrai quand passés au lambda:
 
 ```d
 filter!"a > 20"(range);
 filter!(a => a > 20)(range);
 ```
 
-`map` — Génère une nouvelle range où le prédicat passé en paramètre de schéma est appliqué à tous les élément:
+`map` — Génère une nouvelle range où le prédicat passé en paramètre de schéma est appliqué à tous les éléments:
 
 ```d
 [1,2,3].map!(x => to!string(x));
@@ -30,7 +30,7 @@ filter!(a => a > 20)(range);
 `take` — retourne *N* éléments d'une range:
 
 ```d
-leTresTresGrandeRange.take(10);
+laTresTresGrandeRange.take(10);
 ```
 
 `zip` — itère sur deux ranges en parallèle est retourne un tuple des deux éléments pendant son itération:
