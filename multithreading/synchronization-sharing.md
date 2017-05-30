@@ -1,6 +1,6 @@
 # Synchronisation et partage
 
-Même si la façon recommandée de faire du parallélisme en D est de se baser sur des données `immutable` et de synchroniser les threads avec le passage de messages, le langage supporte nativement des primitives de *synchronisation* et un attribut de type `shared` pour marqué les objets qui sont accessibles pour plusieurs threads:
+Même si la façon recommandée de faire du parallélisme en D est de se baser sur des données `immutable` et de synchroniser les threads avec le passage de messages, le langage supporte nativement des primitives de *synchronisation* et un attribut de type `shared` pour marquer les objets qui sont accessibles par plusieurs threads:
 
 ```d
 shared(int)* p = new int;
@@ -20,7 +20,7 @@ synchronized
 
 Dans les méthodes de `class`, on peut associer plusieurs *mutexs* à ces blocs avec la syntaxe `synchronized(membre1, membre2)` pour réduire les risques de conflits. Le D insère automatiquement les *sections critiques*. Une classe complète peut être marqué comme `synchronized` et le compilateur s'assurera qu'un seul thread accède à une instance de la classe à la fois.
 
-Des opérations atomiques peuvent être effectuées sur des variables `shared` en utilise la fonction `core.atomic.atomicOp`:
+Des opérations atomiques peuvent être effectuées sur des variables `shared` en utilisant la fonction `core.atomic.atomicOp`:
 
 ```d
 shared int test = 5;
