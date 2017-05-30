@@ -1,10 +1,10 @@
 # Programmation par contrats
 
-La programmation par contrats en D inclue un ensemble de fonctionnalités qui permettent d'améliorer la qualité du code en implémentant des tests pour s'assurer que le code se comporte comme on le souhaite. Les contrats ne sont disponibles qu'en mode **debug** et ne seront pas exécutés en mode **release**. Ils ne doivent donc pas être utilisés pour valider une entrée de l'utilisateur.
+La programmation par contrats en D est un ensemble de fonctionnalités qui permettent d'améliorer la qualité du code en implémentant des tests pour s'assurer que le code se comporte comme on le souhaite. Les contrats ne sont disponibles qu'en mode **debug** et ne seront pas exécutés en mode **release**. Ils ne doivent donc pas être utilisés pour valider une entrée de l'utilisateur.
 
 ### `assert`
 
-La forme la plus simple de programmation par contrat en D est l'utilisation d'expressions `assert(...)` qui vérifie qu'une certaine condition est remplie, et déclenchent une `AssertionError` sinon;
+La forme la plus simple de programmation par contrats en D est l'utilisation d'expressions `assert(...)` qui vérifient qu'une certaine condition est remplie, et déclenchent une `AssertionError` dans le cas contraire:
 
 ```d
 assert(sqrt(4) == 2);
@@ -12,18 +12,20 @@ assert(sqrt(4) == 2);
 assert(sqrt(16) == 4, "sqrt ne fonctionne pas !");
 ```
 
-### Les contrats de fonctions
+### Les contrats dans les fonctions
 
-`in` et `out` permettent de formaliser des contrats pour vérifier les entrées les sorties de fonctions.
+`in` et `out` permettent de formaliser des contrats pour vérifier les entrées et/ou les sorties de fonctions.
 
 ```d
 long racineCarree(long x)
 in
 {
+    // On vérifie que l'argument est valide
     assert(x >= 0);
 }
 out
 {
+    // On vérifie que notre résultat est cohérent
     assert((result*result) <= x
         && (result+1) * (result+1) > x);
 }
@@ -33,19 +35,21 @@ body
 }
 ```
 
-Le contenu du bloc `in` pourrait aussi être placé au début du corps de la fonction, mais c'est bien plus clair de cette façon. Le bloc `out` peut capturer la valeur de la retour de la fonction peut être capturée en utilisant la syntaxe `out(result)`.
+Le contenu du bloc `in` pourrait aussi être placé au début du corps de la fonction, mais c'est bien plus clair de cette façon. Le bloc `out` peut capturer la valeur de la retour de la fonction en utilisant la syntaxe `out(result)`.
 
 ### Vérification d'invariants
 
 `invariant()` est une méthode spéciale des `struct` et des `class` qui permet d'assurer l'intégrité d'un objet au cours de son existence.
 
-* Elle est appellée après que le constructeur ai été appelé et avant l'appel au destructeur.
-* C'est appellé avant l'appel à une méthode
-* C'est appellé après l'appel à une méthode
+* Elle est appelée après l'appel au constructeur et avant l'appel au destructeur.
+* Elle est appelée avant l'appel à une méthode
+* Elle est appelée après l'appel à une méthode
 
 ### Valider des entrées utilisateur
 
-Si tous les contrats sont retirés dans une version `release`, les entrées utilisateurs ne devraient pas être vérifiées dans les contrats. De plus, il est possible de mettre des expressions `assert` dans des fonctions `nothrow` puisqu'elles déclenchent des `Error`s et non des `Exception`s. L'équivalent de `assert` à l'exécution est [`std.exception.enforce`](https://dlang.org/phobos/std_exception.html#.enforce), qui lance des `Exception`s que l'ont peut intercepter et traiter.
+Si tous les contrats sont retirés dans une version `release`, il faut faire attention à ne pas vérifier les données entrées par l'utilisateur dans les contrats. 
+
+À noter également qu'il est possible de mettre des expressions `assert` dans des fonctions `nothrow` puisqu'elles déclenchent des `Error`s et non des `Exception`s. L'équivalent de `assert` à l'exécution est la fonction [`std.exception.enforce`](https://dlang.org/phobos/std_exception.html#.enforce), qui déclenche des `Exception`s que l'ont peut intercepter et gérer.
 
 ### Pour aller plus loin
 
@@ -62,8 +66,8 @@ import std.stdio : writeln;
 
 /**
 Type qui représente une 
-date façon simplifiée
-Utilisez plutôt std.datetime
+date de façon simplifiée
+Utilisez plutôt `std.datetime`
 */
 struct Date {
     private {
@@ -108,7 +112,7 @@ struct Date {
     AAAA-JJ-MM en chaîne de caractères
 
     Returns: Une représentation en `string` de `Date`
-    /*
+    */
     string toString() const
     out (result) {
         import std.algorithm : all, count,
@@ -116,7 +120,8 @@ struct Date {
         import std.string : isNumeric;
         import std.array : split;
 
-        // vérifie qu'on retourne AAAA-MM-JJ
+        // vérifie qu'on retourne une
+        // date sous la forme AAAA-MM-JJ
         assert(result.count("-") == 2);
         auto parts = result.split("-");
         assert(parts.map!`a.length`
