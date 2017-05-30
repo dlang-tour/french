@@ -1,10 +1,10 @@
 # opDispatch et opApply
 
-D permet de surcharger des opérateurs comme `+`, `-` ou l'opérateur d'appel `()` pour les [classes et les structures](https://dlang.org/spec/operatoroverloading.html). Nous allons regarder de plus près les surcharges d'opérateurs avec `opDispatch` et `opApply`.
+D permet de surcharger des opérateurs comme `+`, `-` ou l'opérateur d'appel `()` pour les [classes et les structures](https://dlang.org/spec/operatoroverloading.html). Nous allons nous intéresser à la surcharges des opérateurs `opDispatch` et `opApply`.
 
 ### opDispatch
 
-`opDispatch` peut être défini comme une méthode d'une `struct` ou d'une `class`. Chaque appel à une méthode inconnue sera passé à `opDispatch` en passant le nom de la méthode appellé en paramètre de schéma sous forme de chaîne de caractères. `opDispatch` est une méthode *attrape-tout* qui permet un autre niveau de programmation générique — et le tout **à la compilation**!
+`opDispatch` peut être défini comme une méthode d'une `struct` ou d'une `class`. Chaque appel à une méthode indéfinie dans cet objet sera passé à `opDispatch` en passant le nom de la méthode appellé en paramètre de modèle. `opDispatch` est une méthode *attrape-tout* qui permet un autre niveau de programmation générique — et le tout **à la compilation**!
 
 ```d
 struct C
@@ -23,13 +23,13 @@ struct CallLogger(C)
 }
 
 CallLogger!C l;
-l.callA(1, 2);
-l.callB("ABC");
+l.callA(1, 2); // "called content.callA"
+l.callB("ABC"); // "called content.callB"
 ```
 
 ### opApply
 
-Au lieu de définir une *range*, on peut implémenter la méthode `opApply` pour appeller `foreach` sur un objet personnalisé. Itérer sur ce genre de type appellera `opApply` avec un delegate spécial en paramètres:
+Au lieu de définir une *range*, on peut implémenter la méthode `opApply` pour appeller `foreach` sur un objet personnalisé. Itérer sur ce genre de type appellera `opApply` avec un delegate spécial en paramètre:
 
 ```d
 class Tree
@@ -52,7 +52,7 @@ class Tree
 }
 ```
 
-Le compilateur transforme le corps du `foreach` par un delegate() spécial qui est passé à l'objet. Son unique paramètre contiendra le contenu courant de la valeur de l'itération. La valeur de retour `int` doit être interprétée et si ce n'est pas `0`, l'itération doit être arrêtée.
+Le compilateur transforme le corps du `foreach` en un delegate() qui est passé à l'objet. Son unique paramètre contiendra le contenu courant de la valeur de l'itération. La valeur de retour `int` doit être vérifiée et si ce n'est pas `0`, l'itération doit être arrêtée.
 
 ### Pour aller plus loin
 
@@ -64,8 +64,8 @@ Le compilateur transforme le corps du `foreach` par un delegate() spécial qui e
 
 ```d
 /*
-A Variant is something that might contain
-any other type:
+Un Variant est un type qui peut contenir
+un autre type:
 https://dlang.org/phobos/std_variant.html
 */
 
