@@ -1,10 +1,10 @@
 # opDispatch et opApply
 
-D permet de surcharger des opérateurs comme `+`, `-` ou l'opérateur d'appel `()` pour les [classes et les structures](https://dlang.org/spec/operatoroverloading.html). Nous allons nous intéresser à la surcharges des opérateurs `opDispatch` et `opApply`.
+D permet de surcharger des opérateurs comme `+`, `-` ou l'opérateur d'appel `()` pour les [classes et les structures](https://dlang.org/spec/operatoroverloading.html). Nous allons nous intéresser à la surcharge des opérateurs `opDispatch` et `opApply`.
 
 ### opDispatch
 
-`opDispatch` peut être défini comme une méthode d'une `struct` ou d'une `class`. Chaque appel à une méthode indéfinie dans cet objet sera passé à `opDispatch` en passant le nom de la méthode appellé en paramètre de modèle. `opDispatch` est une méthode *attrape-tout* qui permet un autre niveau de programmation générique — et le tout **à la compilation**!
+`opDispatch` peut être défini comme une méthode d'une `struct` ou d'une `class`. Chaque appel à une méthode indéfinie dans cet objet sera passé à `opDispatch` en passant le nom de la méthode appelée en paramètre de modèle. `opDispatch` est une méthode *attrape-tout* qui permet un autre niveau de programmation générique — et le tout **à la compilation**!
 
 ```d
 struct C
@@ -29,7 +29,7 @@ l.callB("ABC"); // "called content.callB"
 
 ### opApply
 
-Au lieu de définir une *range*, on peut implémenter la méthode `opApply` pour appeller `foreach` sur un objet personnalisé. Itérer sur ce genre de type appellera `opApply` avec un delegate spécial en paramètre:
+Au lieu de définir une *range*, on peut implémenter la méthode `opApply` pour appeler `foreach` sur un objet personnalisé. Itérer sur ce genre de type appellera `opApply` avec un delegate spécial en paramètre:
 
 ```d
 class Tree
