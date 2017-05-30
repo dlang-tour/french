@@ -143,9 +143,9 @@ void main() {
     vec2.y = 20;
     vec2.z = 0;
 
-    // Si une fonction membre n'a pas de paramètre
-    // les parenthèses sont optionelles 
-    // lors de l'appel
+    // Si une fonction membre n'a pas de 
+    // paramètre les parenthèses sont 
+    // optionelles lors de l'appel
     assert(vec1.length == 10);
     assert(vec2.length == 20);
 
