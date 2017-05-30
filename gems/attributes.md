@@ -20,7 +20,7 @@ foo.bar = 10; // appelle foo.bar(10);
 
 ### `@nogc`
 
-Quand une fonction est marquée avec l'attribut `@nogc`, le compilateur D nous garantit qu'aucune allocation mémoire impliquant ne sera faite dans cette fonction. Une fonction `@nogc` ne peut appeller que des fonctions `@nogc`
+Quand une fonction est marquée avec l'attribut `@nogc`, le compilateur D nous garantit qu'aucune allocation mémoire ne sera faite dans cette fonction. Une fonction `@nogc` ne peut appeller que des fonctions `@nogc`
 
 ```d
 void foo() @nogc
