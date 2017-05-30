@@ -4,7 +4,7 @@ Unicode est un standard international pour encoder et représenter du texte info
 
 ## Qu'est ce que c'est ? Pourquoi ?
 
-Les ordinateurs, au niveau éléctronique, n'ont aucune idée de ce qu'est du texte, puisqu'ils ne travaillent qu'avec des nombres. Il faut donc un moyen pour le code d'interagir avec des données textuelles et des les représenter sous forme binaire. La méthode de transformation est appellé un *encodage*, et unicode est un encodage.
+Les ordinateurs, au niveau éléctronique, n'ont aucune idée de ce qu'est du texte, puisqu'ils ne travaillent qu'avec des nombres. Il faut donc un moyen pour le code d'interagir avec des données textuelles et des les représenter sous forme binaire. La méthode de transformation est appelée un *encodage*, et Unicode est un encodage.
 
 Pour voir la représentation numériques des chaînes de l'exemple, lancez simplement le programme.
 
@@ -18,7 +18,7 @@ Unicode a résolu la plupart de ces problèmes et est très bien supporté sur t
 
 En D, `string`, `wstring` et `dstring` sont respectivement des chaînes de caractères encodés en UTF-8, UTF-16 et UTF-32. Les types de leur caractères sont `char`, `wchar` et `dchar`.
 
-D'après la spécification, c'est une erreur de stocker une chaîne des données non Unicode dans un type de string; attendez-vous à ce que vos programme plante si votre chaîne est mal encodée.
+D'après la spécification, c'est une erreur de stocker une chaîne des données non Unicode dans un type de string; attendez-vous à ce que vos programmes plantent si votre chaîne est mal encodée.
 
 Pour stocker d'autres encodages, ou pour obtenir un comportement similaire à celui de C/C++, vous pouvez utiliser `ubyte[]` ou `char*`.
 
@@ -26,9 +26,9 @@ Pour stocker d'autres encodages, ou pour obtenir un comportement similaire à ce
 
 *Il est conseillé de lire le chapitre sur les [algorithmes de ranges](gems/range-algorithms) avant de lire cette partie*
 
-Il est important d'avoir plusieurs à chose à l'esprit quand on utilise Unicode en D.
+Il est important d'avoir plusieurs choses à l'esprit quand on utilise Unicode en D.
 
-Premièrement, pour le confort de programmation, quand on itère sur une string en utilisant une fonction de range, Phobos encodera tous les éléments des `string`s et des `dstring`s en points de code UTF-32. Cette pratique, appelée **auto-décodage** signifie que:
+Premièrement, pour le confort de programmation, quand on itère sur une `string` en utilisant une fonction de range, Phobos encodera tous les éléments des `string`s et des `dstring`s en points de code UTF-32. Cette pratique, appelée **auto-décodage** signifie que:
 
 ```d
 static assert(is(typeof(utf8.front) == dchar));
@@ -38,7 +38,7 @@ Ce comportement impliques plusieurs choses, parmi lesquelles le fait que `std.tr
 
 Dans l'exemple, vous pouvez voir pourquoi ces deux choses ne sont pas toujours égales. De ce fait, les algorithmes de range dans Phobos se comportent comme si les `string`s n'avaient pas d'informations sur leur longueur.
 
-Pour plus d'informations et de détails techniques sur l'auto-décodage, jetez un coup d'oeil aux liens de la section "Pour aller plus loin".
+Pour plus d'informations et de détails techniques sur l'auto-décodage, jetez un coup d'6œil aux liens de la section "Pour aller plus loin".
 
 ### Pour aller plus loin
 
