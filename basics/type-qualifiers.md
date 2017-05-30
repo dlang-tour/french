@@ -86,7 +86,7 @@ void main()
     // immutable int* im = &m; // erreur!
 
     /**
-    * Pointeur vers un segment en lecture seule :
+    * Pointeur vers un segment en lecture seule:
     */
     immutable v = 100;
     writeln("v: ", typeof(v).stringof);
