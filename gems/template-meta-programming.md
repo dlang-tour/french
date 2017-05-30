@@ -138,8 +138,8 @@ public:
 void main()
 {
     auto vec = Vector3!double(3,3,3);
-    // Ça ne fonctionne pas à cause de la
-    // contrainte de modèle
+    // Ça ne fonctionne pas à cause de 
+    // la contrainte de modèle
     // Vector3!string illegal;
 
     auto vec2 = Vector3!double(4,4,4);
@@ -147,8 +147,8 @@ void main()
 
     auto vecInt = Vector3!int(1,2,3);
     // n'a pas la méthode dot parce qu'on ne 
-    // l'a activée que pour les nombres à virgule
-    // flottante
+    // l'a activée que pour les nombres à
+    // virgule flottante
     // vecInt.dot(Vector3!int(0,0,0));
 
     // getter et setters générés automatiquement
