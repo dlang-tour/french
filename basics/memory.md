@@ -45,7 +45,8 @@ import std.stdio : writeln;
 void safeFun() @safe
 {
     writeln("Bonjour");
-    // allouer de la mémoire avec le ramasse-miettes
+    // allouer de la mémoire avec le 
+    // ramasse-miettes
     // est sûr aussi.
     int* p = new int;
 }

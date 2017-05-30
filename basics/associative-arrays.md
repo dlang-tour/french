@@ -50,7 +50,8 @@ int[string] wordCount(string text)
     import std.algorithm.iteration : splitter;
     import std.string : toLower;
 
-    // Indexé par les mots et contenant le compte des mots
+    // Indexé par les mots et contenant le 
+    // compte des mots
     int[string] words;
 
     foreach(word; splitter(text.toLower(), " "))
@@ -66,7 +67,7 @@ int[string] wordCount(string text)
 
 void main()
 {
-    string text = "programmer en D est très amusant";
+    string text = "programmer en D est fun";
 
     auto wc = wordCount(text);
     writeln("Nombre de mots: ", wc);

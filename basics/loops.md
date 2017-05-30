@@ -81,14 +81,15 @@ Calcule la moyenne des
 double average(int[] array) {
     // La propriété .empty pour les tableaux
     // n'est pas accessible par défaut en D
-    // mais est contenue dans le package std.array
+    // mais est contenue dans le package 
+    // std.array
     import std.array : empty, front;
 
     double accumulator = 0.0;
     auto length = array.length;
     while (!array.empty) {
-        // On pourrait aussi faire ça avec .front
-        // en l'important avec :
+        // On pourrait aussi faire ça 
+        // avec .front en l'important avec :
         // import std.array : front;
         accumulator += array[0];
         array = array[1 .. $];

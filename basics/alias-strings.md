@@ -85,22 +85,26 @@ import std.string : format;
 void main() {
     // format génère une `string` en utilisant
     // une syntaxe similaire à celle de printf.
-    // D permet de gérer les chaînes de caractères
-    // UTF nativement
+    // D permet de gérer les chaînes de 
+    // caractères UTF nativement
     string str = format("%s %s", "Hellö",
         "Wörld");
     writeln("Ma chaîne: ", str);
-    writeln("Longueur du tableau (nombre de codets)"
+    writeln("Longueur du tableau " ~
+        "(nombre de codets)"
         ~ " de la chaîne: ", str.length);
-    writeln("Longueur de la range (nombre de points de code)"
+    writeln("Longueur de la range "
+        ~ "(nombre de points de code)"
         ~ " de la chaîne: ", str.walkLength);
-    writeln("Nombre de caractères (nombre de graphèmes)"
+    writeln("Nombre de caractères " 
+        ~ "(nombre de graphèmes)"
         ~ " de la chaîne: ",
         str.byGrapheme.walkLength);
 
-    // Les strings sont des tableaux normaux, donc
-    // n'importe quelle opération qui fonctionne
-    // sur les tableaux fonctionne ici aussi !
+    // Les strings sont des tableaux normaux, 
+    // donc n'importe quelle opération qui 
+    // fonctionne sur les tableaux fonctionne 
+    // ici aussi !
     import std.array : replace;
     writeln(replace(str, "lö", "lo"));
     import std.algorithm : endsWith;

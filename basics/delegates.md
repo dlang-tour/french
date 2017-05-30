@@ -114,8 +114,8 @@ void main()
     writeln("Le type de la fonction est ",
         typeof(func).stringof, "!");
 
-    // exécute le delegate qui réalise l'opération
-    // pour nous
+    // exécute le delegate qui réalise 
+    // l'opération pour nous
     writeln("résultat: ", func(a, b));
 }
 ```

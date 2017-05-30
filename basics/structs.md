@@ -121,15 +121,17 @@ struct Vector3 {
 
     /**
     Returns: représentation sous forme de string
-        La sortie doit être limitée à une précision
+        La sortie doit être limitée à une 
+        précision
         de 1 chiffre après la virgule
     "x: 0.0 y: 0.0 z: 0.0"
     */
     string toString() const {
         import std.string : format;
-        // Astuce: réferez vous à Check the string representation la documentation
-        // de std.format pour comprendre comment
-        // influencer la représentation des flottants.
+        // Astuce: réferez vous à la 
+        // documentation de std.format pour 
+        // comprendre comment influencer la 
+        // représentation des flottants.
         return format("");
     }
 }
@@ -142,7 +144,8 @@ void main() {
     vec2.z = 0;
 
     // Si une fonction membre n'a pas de paramètre
-    // les parenthèses sont optionelles lors de l'appel
+    // les parenthèses sont optionelles 
+    // lors de l'appel
     assert(vec1.length == 10);
     assert(vec2.length == 20);
 
@@ -162,7 +165,8 @@ void main() {
     writeln("vec1 = ", vec1);
     writefln("vec2 = %s", vec2);
 
-    // Vérifie la représentation sous forme de chaîne de caractères
+    // Vérifie la représentation sous forme de 
+    // chaîne de caractères
     assert(vec1.toString() ==
         "x: 10.0 y: 0.0 z: 0.0");
     assert(vec2.toString() ==
