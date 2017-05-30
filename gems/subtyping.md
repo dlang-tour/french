@@ -1,6 +1,6 @@
 # Sous-types
 
-Une `struct` ne peut pas hériter d'autres `struct`s. Mais pour ces pauvres `struct`s, D a une autre moyen d'étendre une fonctionnalité : le **sous-typage**.
+Une `struct` ne peut pas hériter d'autres `struct`s. Mais D a un autre moyen d'étendre une fonctionnalité de ces pauvres `struct`s: le **sous-typage**.
 
 Une structure peut définir un de ses membres en tant qu'`alias this`:
 
@@ -12,7 +12,7 @@ struct SafeInt
 }
 ```
 
-N'importe quelle fonction ou opération qui ne peut pas être réalisée par `SafeInt` sera gérée par l'attribut `alias this`. De l'intérieur, `SafeInt` se comporte comme un entier normal.
+N'importe quelle fonction ou opération qui ne peut pas être réalisée par `SafeInt` sera gérée par l'attribut `alias this`. De l'extérieur, `SafeInt` se comporte comme un entier normal.
 
 Cela permet d'étendre des types avec des nouvelles fonctionnalités sans aucun coûts en terme de mémoire ou d'exécution. Le compilateur s'assure de faire la bonne opération quand il accède à l'attribut `alias this`.
 
