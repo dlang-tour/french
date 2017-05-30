@@ -38,7 +38,7 @@ Ce comportement impliques plusieurs choses, parmi lesquelles le fait que `std.tr
 
 Dans l'exemple, vous pouvez voir pourquoi ces deux choses ne sont pas toujours égales. De ce fait, les algorithmes de range dans Phobos se comportent comme si les `string`s n'avaient pas d'informations sur leur longueur.
 
-Pour plus d'informations et de détails techniques sur l'auto-décodage, jetez un coup d'6œil aux liens de la section "Pour aller plus loin".
+Pour plus d'informations et de détails techniques sur l'auto-décodage, jetez un coup d'œil aux liens de la section "Pour aller plus loin".
 
 ### Pour aller plus loin
 
