@@ -51,7 +51,7 @@ import std.stdio : writeln;
 void main()
 {
     if (1 == 1)
-        writeln("D a eu son diplôme de mathématiques");
+        writeln("D a eu son diplôme de maths");
 
     int c = 5;
     switch(c) {

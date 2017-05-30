@@ -3,3 +3,5 @@ start: welcome/welcome-to-d
 repo: dlang-tour/french
 ordering:
 - welcome
+- basics
+- gems

@@ -69,12 +69,15 @@ void main()
     m = 10; // correct
 
     /**
-    * Pointeur vers un segment de mémoire mutable:
+    * Pointeur vers un segment de mémoire 
+    * mutable:
     */
-    // Un pointeur const vers un segment de mémoire mutable est autorisé
+    // Un pointeur const vers un segment de 
+    // mémoire mutable est autorisé
     const int* cm = &m;
     writeln("cm: ", typeof(cm).stringof);
-    // Par définition, `const` ne peut pas être modifié:
+    // Par définition, `const` ne peut pas être 
+    // modifié:
     // *cm = 100; // erreur !
 
     // Un `immutable` est garanti de rester
@@ -83,13 +86,14 @@ void main()
     // immutable int* im = &m; // erreur!
 
     /**
-    * Pointeur vers un segment en lecture seule :
+    * Pointeur vers un segment en lecture seule:
     */
     immutable v = 100;
     writeln("v: ", typeof(v).stringof);
     // v = 5; // erreur !
 
-    // `const` peut pointer vers de la mémoire en lecture seul,
+    // `const` peut pointer vers de la mémoire 
+    // en lecture seul,
     // mais est également lecture seule.
     const int* cv = &v;
     writeln("*cv: ", typeof(cv).stringof);

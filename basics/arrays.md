@@ -66,7 +66,8 @@ et le caractère qui suit `z` est `a`.
 
 Params:f
     input = tableau à décaler
-    shift = longueur du décalage pour chaque lettre
+    shift = longueur du décalage pour chaque 
+    lettre
 
 Returns:
     tableau décalé

@@ -81,8 +81,8 @@ void main()
 
     auto f = 3.1415f; // f est un float
 
-    // typeid(VAR) retourne des informations sur le type
-    // d'une expression
+    // typeid(VAR) retourne des informations sur
+    //  le type d'une expression
     writeln("le type de  f est ", typeid(f));
     double pi = f; // autorisé
     // pour les types flottants le cast

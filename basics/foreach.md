@@ -114,8 +114,8 @@ void main() {
         foreach (e; ligne)
             total += e;
 
-        auto moyenne = total / ligne.length;
-        writefln("moyenne [ligne=%d]: %.2f", i, moyenne);
+        auto m = total / ligne.length;
+        writefln("moy [ligne=%d]: %.2f", i, m);
     }
 }
 ```

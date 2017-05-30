@@ -103,7 +103,7 @@ void randomCalculator()
     int b = 5;
 
     // uniform(START, END) génère un nombre 
-    // aléatoire entre START et END (non inclus).
+    // aléatoire entre START et END (non inclus)
     // En fonction du résultat, on réalise une
     // des opérations mathématiques
     switch (uniform(0, 4)) {
@@ -120,8 +120,9 @@ void randomCalculator()
             writeln(diviser(a, b));
             break;
         default:
-            // Instruction spéciale qui marque une ligne
-            // qu'on ne doit jamais atteindre
+            // Instruction spéciale qui marque 
+            // une ligne qu'on ne doit jamais 
+            // atteindre
             assert(0);
     }
 }
@@ -129,8 +130,9 @@ void randomCalculator()
 void main()
 {
     randomCalculator();
-    // additioner(), soustraire(), multiplier() and diviser()
-    // ne sont pas accessibles en dehors de leur portée
+    // additioner(), soustraire(), multiplier()
+    // and diviser() ne sont pas accessibles en
+    // dehors de leur portée
     static assert(!__traits(compiles,
                             additioner(1, 2)));
 }

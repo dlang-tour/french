@@ -76,12 +76,13 @@ void main()
     // à la range originale que si nécessaire
     auto fib10 = take(fib, 10);
     
-    // Mais nous voulons accéder à tous les éléments
+    // Mais nous voulons accéder à tous les 
+    // éléments
     // et les transformer en tableau d'entiers.
 
     int[] les10Fib = array(fib10);
 
-    writeln("Les dix premiers nombres de la suite de Fibonacci: ",
+    writeln("Les dix nombres de Fibonacci: ",
         les10Fib);
     assert(les10Fib ==
         [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]);

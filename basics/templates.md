@@ -76,7 +76,8 @@ class Chien: Animal!("Ouaf") {
 
 class Chat: Animal!("Miaou") {
 }
-// On aurait pu remplacer la définition de cette classe par :
+// On aurait pu remplacer la définition de cette
+//  classe par :
 // alias Chat = Animal!("Miaou");
 
 /**
