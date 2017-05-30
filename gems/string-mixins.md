@@ -1,15 +1,15 @@
 # String Mixins
 
-L'expression `mixin` (__NdT: "mélanger dans"__) prend une chaîne de caractères, la compile et génère des instructions en fonction. C'est purement une mécanique de **compilation** et ne peut fonctionner que quand les chaînes de caractères sont disponibles à la compiltion. Il ne faut pas confondre cette expression avec l'instruction javascript démoniaque `eval`.
+L'expression `mixin` (__NdT: "mélanger dans"__) compile une chaîne de caractères contenant du code D et génère les instructions correspondantes. C'est purement une mécanique de **compilation** et ça ne peut fonctionner que quand les chaînes de caractères sont disponibles à la compiltion. Il ne faut pas confondre cette expression avec l'instruction javascript démoniaque `eval`.
 
 ```d
 mixin("int b = 5");
 assert(b == 5"); // fonctionne parfaitement
 ```
 
-`mixing` fonctionne aussi avec des chaînes construite dynamiquement tant qu'elles ne dépendent pas de valeurs connues uniquement à l'exécution.
+`mixing` fonctionne aussi avec des chaînes construites dynamiquement tant qu'elles ne dépendent pas de valeurs connues uniquement à l'exécution.
 
-`mixin` associé avec la **CTFE**, que nous verrons dans le prochain chapitre, permet d'écrire des librairies impressionantes, comme [Pegged](https://github.com/PhilippeSigaud/Pegged) qui génère un parser de grammaire à partir d'une grammaire sous forme de chaîne de caractère dans le code source.
+`mixin` associé avec la **CTFE**, que nous verrons dans le prochain chapitre, permet d'écrire des librairies impressionantes, comme [Pegged](https://github.com/PhilippeSigaud/Pegged) qui génère un parser à partir d'une grammaire sous forme de chaîne de caractères dans le code source.
 
 ### Pour aller plus loin
 
