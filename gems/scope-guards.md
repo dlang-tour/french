@@ -6,7 +6,7 @@ Les gardes de portée permettent d'exécuter des instructions dans certaines con
 * `scope(success)` les instructions seront exécutées lorsqu'aucune exception n'aura été lancée
 * `scope(failure)` les instructions seront exécutées lorsqu'une exception aura été lancée avant la sortie de la portée
 
-Utiliser les gardes de portée rend le code bien plus propre et permet de placer l'allocation des ressources et leur libération l'un à côté de l'autre. Ils améliorent également la sûreté du programme, pusqu'ils s'assurent que le code de libération des ressources est **toujours** appelé, indépendament de l'exécution du code.
+Utiliser les gardes de portée rend le code bien plus propre et permet de placer l'allocation des ressources et leur libération l'un à côté de l'autre. Ils améliorent également la sûreté du programme, puisqu'ils s'assurent que le code de libération des ressources est **toujours** appelé, indépendament de l'exécution du code.
 
 La fonctionnalité de `scope` du D remplacement l'idiome RAII, souvent utilisé en C++ et qui ammène souvent à des objets complexes pour la gestion des ressources mémoires.
 
