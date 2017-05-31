@@ -14,7 +14,7 @@ struct SafeInt
 
 N'importe quelle fonction ou opération qui ne peut pas être réalisée par `SafeInt` sera gérée par l'attribut `alias this`. De l'extérieur, `SafeInt` se comporte comme un entier normal.
 
-Cela permet d'étendre des types avec des nouvelles fonctionnalités sans aucun coûts en terme de mémoire ou d'exécution. Le compilateur s'assure de faire la bonne opération quand il accède à l'attribut `alias this`.
+Cela permet d'étendre des types avec des nouvelles fonctionnalités sans aucun coût en terme de mémoire ou d'exécution. Le compilateur s'assure de faire la bonne opération quand il accède à l'attribut `alias this`.
 
 `alias this` fonctionne également avec les classes.
 
