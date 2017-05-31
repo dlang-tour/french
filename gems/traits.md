@@ -1,6 +1,6 @@
 # Traits
 
-Une des force de D est sont système d'évaluation de fonction à la compilation (CTFE). En le combinant avec de l'introspection, on peut écrire des programmes très génériques et très optimisés.
+Une des forces de D est son système d'évaluation de fonction à la compilation (CTFE). En le combinant avec de l'introspection, on peut écrire des programmes très génériques et très optimisés.
 
 ## Contrats expicites
 
@@ -11,7 +11,7 @@ S[] splitIntoWord(S)(S input)
 if (isSomeString!S)
 ```
 
-Cela s'applique également à d'autres types de paramètres de schémas et `maSurcouche` peut s'assurer que la fonction passée en paramètre est une fonction appellable:
+Cela s'applique également à d'autres types de paramètres de schémas et `maSurcouche` peut s'assurer que la fonction passée en paramètre est une fonction appelable:
 
 ```d
 void myWrapper(alias f)
@@ -28,7 +28,7 @@ if (isForwardRange!R1
     !isNarrowString!R1)
 ```
 
-Cela signifie que la fonction ne peut être appellée (et donc instanciée et compilée) si:
+Cela signifie que la fonction ne peut être appelée (et donc instanciée et compilée) si:
 
 - `r1` est copiable (garanti par `isForwardRange`)
 - `r2` est itérable (garanti par `isInputRange`)
@@ -103,8 +103,8 @@ import std.stdio : writeln;
 import std.traits : isNarrowString;
 
  /**
- Retourne le préfixe commune de deux ranges
- sans décoder dans les cas particulier
+ Retourne le préfixe commun de deux ranges
+ sans décoder dans les cas particuliers
 
  Params:
     pred = prédicat pour comparer les éléments
