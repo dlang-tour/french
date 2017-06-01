@@ -1,6 +1,6 @@
 # Types fondamentaux
 
-Un certains nombre de types fondamentaux sont définis en D, et ils ont la particularité de tous avoir la même taille **quelle que soit** la plateforme (à l'exception du type `real` qui est un nombre à virgule flottante de la plus grande précision possible).
+Un certain nombre de types fondamentaux sont définis en D, et ils ont la particularité de tous avoir la même taille **quelle que soit** la plateforme (à l'exception du type `real` qui est un nombre à virgule flottante de la plus grande précision possible).
 Il n'y a pas de différences entre la taille d'un entier, que le programme soit compilé sur un système 32-bits ou 64-bits.
 
 
@@ -38,9 +38,9 @@ Les flottants ont également une propriété `.nan` (valeur indéfinie), `.infin
 
 Chaque type a également une propriété `.stringof` qui retourne son nom sous la forme d'une chaîne de caractères.
 
-### Indexes en D
+### Index en D
 
-En D, les indexes ont généralement le type `size_t`, un type assez grand pour représenter n'importe quelle adresse en mémoire, c'est à dire un `uint` sur les systèmes 32-bits et un `ulong` sur les systèmes 64-bits.
+En D, les index ont généralement le type `size_t`, un type assez grand pour représenter n'importe quelle adresse en mémoire, c'est à dire un `uint` sur les systèmes 32-bits et un `ulong` sur les systèmes 64-bits.
 
 ### Les expressions assert
 
