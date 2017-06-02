@@ -119,8 +119,8 @@ void main()
 		writeln("Ligne: ", e.line);
 		writeln("Copie de pile:\n", e.info);
 
-        // Le format par défaut pourrait aussi être
-        // utilisé
+        // Le format par défaut pourrait aussi 
+	// être utilisé.
         // writeln(e);
     }
 }
