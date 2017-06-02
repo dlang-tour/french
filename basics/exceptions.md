@@ -1,10 +1,10 @@
 # Exceptions
 
-Ce guidene concerne que les `Exception`s utilisateurs. Les `Error`s du système sont généralement fatales et ne devrait **jamais** être interceptées.
+Ce guide ne concerne que les `Exception`s utilisateur. Les `Error`s du système sont généralement fatales et ne devrait **jamais** être interceptées.
 
 ### Attraper les exceptions
 
-Un cas typique d'utilisation d'exceptions et la validation de données entrées par l'utilisateur. Quand une exception est lancée, la pile sera déroulée jusqu'à ce qu'un bloc qui attrape l'exception soit trouvé.
+Un cas typique d'utilisation d'exceptions est la validation de données entrées par l'utilisateur. Quand une exception est lancée, la pile sera déroulée jusqu'à ce qu'un bloc qui attrape l'exception soit trouvé.
 
 ```d
 try
@@ -38,9 +38,9 @@ finally
 }
 ```
 
-Nous verrons dans un prochain chapitre que les gardes de portée sont souvent une meilleure solution sur le motif `try-finally`.
+Nous verrons dans un prochain chapitre que les gardes de portée sont souvent une meilleure solution que le motif `try-finally`.
 
-### Exceptions personallisées
+### Exceptions personnalisées
 
 On peut facimement hériter d'`Exception` et créer des exceptions personnalisées:
 
@@ -58,7 +58,7 @@ throw new UtilisateurNonTrouve("D-Man est en congés");
 
 ### Un monde sûr avec `nothrow`
 
-Le compilateur D peut garantir qu'une fonction ne peut pas lancer d'exceptions. Ces fonctions sont annotés avec le mot-clé `nothrow`.
+Le compilateur D peut garantir qu'une fonction ne peut pas lancer d'exceptions. Ces fonctions sont annotées avec le mot-clé `nothrow`.
 
 ```d
 bool lessThan(int a, int b) nothrow
@@ -71,7 +71,7 @@ bool lessThan(int a, int b) nothrow
 
 ### std.exception
 
-`std.exception` fourni une fonction `enforce` qui peut être utilisée comme `assert` mais qui lance une `Exception` à la place d'une `AssertError`:
+`std.exception` fournit une fonction `enforce` qui peut être utilisée comme `assert` mais qui lance une `Exception` à la place d'une `AssertError`:
 
 ```d
 import std.exception : enforce;
