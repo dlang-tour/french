@@ -17,7 +17,7 @@ catch(FileException e)
 }
 ```
 
-Il est possible d'y avoir plusieurs blocs `catch`s et un bloc `finally` qui est exécuté que l'erreur soit survenue ou non. Les exceptions sont lancées avec l'instruction `thrown`.
+Il est possible d'avoir plusieurs blocs `catch`s et un bloc `finally` qui est exécuté que l'erreur soit survenue ou non. Les exceptions sont lancées avec l'instruction `throw`.
 
 ```d
 try
@@ -42,7 +42,7 @@ Nous verrons dans un prochain chapitre que les gardes de portée sont souvent un
 
 ### Exceptions personnalisées
 
-On peut facimement hériter d'`Exception` et créer des exceptions personnalisées:
+On peut facilement hériter d'`Exception` et créer des exceptions personnalisées:
 
 ```d
 class UtilisateurNonTrouve : Exception
@@ -81,7 +81,7 @@ float magique = 1_000_000_000;
 enforce(magique + 42 - magique == 42, "Les mathématiques avec les nombres à virgule flottante sont marrantes");
 
 // Lance une exception personnalisée
-enforce!StringException('a' != 'A', "algorithme sensible à le casse");
+enforce!StringException('a' != 'A', "algorithme sensible à la casse");
 ```
 
 Cependant, il y a d'autres choses dans `std.exception`. Par exemple, quand l'erreur n'est pas fatale, il est possible d'utiliser `collectException` dessus:
@@ -119,7 +119,7 @@ void main()
 		writeln("Ligne: ", e.line);
 		writeln("Copie de pile:\n", e.info);
 
-        // Le format par défaut pour aussi être
+        // Le format par défaut pourrait aussi être
         // utilisé
         // writeln(e);
     }
