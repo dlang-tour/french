@@ -114,8 +114,9 @@ void main()
         threads ~= spawn(&worker, thisTid);
     }
 
-    // Les threads d'id paire reçoivent un nombre
-    // les autres une chaîne de caractères
+    // Les threads d'id paire reçoivent un 
+    // nombre, les autres une chaîne de 
+    // caractères
     foreach(int idx, ref tid; threads) {
         import std.string : format;
         if (idx  % 2)
