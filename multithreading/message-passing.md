@@ -1,6 +1,6 @@
 # Passage de messages
 
-À la place de gérer le parallélisme et la synchronisation à la main, D permet d'utiliser le *passage de messages* pour exploiter le puissance des CPU à plusieurs coeurs. Les threads communiquent avec des *messages*, qui contiennent des valeurs arbitraires, pour se partager le travail et se synchroniser. Ils s'interdisent de partager des données pour éviter beaucoup de problèmes liés au parallélisme.
+À la place de gérer le parallélisme et la synchronisation à la main, D permet d'utiliser le *passage de messages* pour exploiter le puissance des CPU à plusieurs cœurs. Les threads communiquent avec des *messages*, qui contiennent des valeurs arbitraires, pour se partager le travail et se synchroniser. Ils s'interdisent de partager des données pour éviter beaucoup de problèmes liés au parallélisme.
 
 Toutes les fonctions qui implémentent le passage de messages en D peuvent être trouvées dans le module [`std.concurrency`](https://dlang.org/phobos/std_concurrency.html). 
 
@@ -10,7 +10,7 @@ Toutes les fonctions qui implémentent le passage de messages en D peuvent être
 auto threadId = spawn(&foo, thisTid);
 ```
 
-`thisTid` est une variable définie dans `std.concurrency` qui fait référence au thread actuel, une information nécessaire pour le passage de messages. `spawn` prend une fonction en premier argument et un nombre arbitraire d'autres arguments qui fonctionnent comme arguments de la fonction.
+`thisTid` est une variable définie dans `std.concurrency` qui fait référence au thread actuel, une information nécessaire pour le passage de messages. `spawn` prend une fonction en premier argument et un nombre arbitraire d'autres paramètres qui fonctionnent comme arguments de la fonction.
 
 ```
 void foo(Tid parentTid)
@@ -38,7 +38,7 @@ string text = receiveOnly!string();
 assert(text == "Done");
 ```
 
-La famille des fonctions  `receive` bloque l'exécution du thread jusqu'à récéption d'un message dans sa "boite aux lettres".
+La famille des fonctions `receive` bloque l'exécution du thread jusqu'à réception d'un message dans sa "boite aux lettres".
 
 ### Pour aller plus loin
 
@@ -59,7 +59,7 @@ import std.concurrency : receive, receiveOnly,
 
 /*
 Une structure personnalisée qui est utilisée
-comme type de message pour coordiner une armée
+comme type de message pour coordonner une armée
 de threads
 */
 struct NumberMessage {
@@ -109,13 +109,14 @@ void worker(Tid parentId)
 void main()
 {
     Tid threads[];
-    // Créé 10 threads fils.
+    // Crée 10 threads fils.
     for (size_t i = 0; i < 10; ++i) {
         threads ~= spawn(&worker, thisTid);
     }
 
-    // Les threads d'id pair recoivent un nombre
-    // les autres une chaîne de caractères
+    // Les threads d'id paire reçoivent un 
+    // nombre, les autres une chaîne de 
+    // caractères
     foreach(int idx, ref tid; threads) {
         import std.string : format;
         if (idx  % 2)
@@ -124,7 +125,7 @@ void main()
             send(tid, format("T=%d", idx));
     }
 
-    // Tous les threads recoivent un message
+    // Tous les threads reçoivent un message
     // cancel!
     foreach(ref tid; threads) {
         send(tid, CancelMessage());
