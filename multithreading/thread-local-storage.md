@@ -9,10 +9,9 @@ La valeur assignée à une variable `static` doit être évaluable à la compila
 ```d
 static int b = 42;
 // b n'est initialisé qu'une fois
-// Quand le programme est exécute sur plusieurs
-// threads, ils auront chacun leur propre "b"
-// qui n'interférera pas avec celui des autres
-// threads.
+// Quand le programme est exécuté sur plusieurs
+// threads, chaque thread aura sa propre variable 
+// "b" qui n'interférera pas avec celle des autres
 ```
 
 On peut déclarer une variable globale "classique" que tous les threads peuvent lire et modifier avec l'attribut `__gshared` qui est l'équivalent de `static` en C. C'est un nom laid pour rappeler au développeur de ne pas trop l'utiliser.
@@ -21,8 +20,8 @@ On peut déclarer une variable globale "classique" que tous les threads peuvent 
 __gshared int b = 50;
 // Aussi initialisé qu'une fois !
 // Un b vraiment global que tous les threads
-// peuvent lire et, ce qui le rend dangereux, 
-// modifier
+// peuvent lire et, ce qui le rend 
+// dangereux, modifier
 ```
 
 ### Pour aller plus loin
@@ -41,7 +40,7 @@ void worker(bool firstTime)
     // courant uniquement. Aucun autre thread
     // ne pourra y accéder. Notez qu'elle n'est
     // initialisée que la première fois où cette
-    // est exécutée.
+    // fonction est exécutée.
     static int laStatique = 0;
     writeln("Thread ", thisTid,
         ": laStatique = ", laStatique++);
@@ -51,7 +50,7 @@ void worker(bool firstTime)
 
 void main()
 {
-    // Créé cinq threads qui appelle chacun 
+    // Crée cinq threads qui appellent chacun 
     // worker(true, i)
     for (size_t i = 0; i < 5; ++i) {
         spawn(&worker, true);
