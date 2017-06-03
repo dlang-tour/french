@@ -6,7 +6,7 @@ L'UFCS permet d'appeller n'importe quelle fonction `fun(a)` avec la syntaxe `a.f
 
 Si le compilateur évalue l'expression `a.fun()` et que le type de `a` n'a pas de méthode appellée `fun()`, il essaye de trouver une fonction globale dont le premier paramètre a le même type que `a`.
 
-Cette fonctionnalité est particulièrement utile quand on veut enchainer les appels à des fonctions. Au lieu d'écrire
+Cette fonctionnalité est particulièrement utile quand on veut enchaîner les appels à des fonctions. Au lieu d'écrire
 
 ```d
 foo(bar(a));

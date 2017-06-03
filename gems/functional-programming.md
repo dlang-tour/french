@@ -1,6 +1,6 @@
 # Programmation fonctionelle
 
-D accorde une grande importance à la *programmation fonctionelle* et intègre des mécaniques pour développer dans un style fonctionel.
+D accorde une grande importance à la *programmation fonctionelle* et intègre des mécanismes pour développer dans un style fonctionel.
 
 En D, une fonction peut être déclarée `pure`, ce qui implique qu'à partir des mêmes paramètres, elle retournera **toujours** le même résultat. Les fonctions `pure`s ne peuvent pas modifier ou accéder à une variable mutable et ne peuvent appeler que des fonctions qui sont elles-même `pure`s.
 
@@ -12,7 +12,7 @@ int add(int gauche, int droite) pure
 }
 ```
 
-Cette variante de `add` est appellée une fonction **strictement pure** parce qu'elle retourne un résultat qui dépend uniquement des paramètres en entrée, sans les modifier. D permet également de définir des fonctions **non-strictement pures** qui peuvent accepter des paramètres mutables:
+Cette variante de `add` est appelée une fonction **strictement pure** parce qu'elle retourne un résultat qui dépend uniquement des paramètres en entrée, sans les modifier. D permet également de définir des fonctions **non-strictement pures** qui peuvent accepter des paramètres mutables:
 
 ```d
 void add(ref int resultat, int gauche, int droite) pure
@@ -21,7 +21,7 @@ void add(ref int resultat, int gauche, int droite) pure
 }
 ```
 
-Ces fonctions sont quand même considérés pures et ne peuvent pas modifier ou accéder à des variables mutables de la portée globale. Seuls les paramètres mutables peuvent être modifiés.
+Ces fonctions sont quand même considérées pures et ne peuvent pas modifier ou accéder à des variables mutables de la portée globale. Seuls les paramètres mutables peuvent être modifiés.
 
 De part les contraintes imposées par `pure`, les fonctions pures sont idéales pour les environnements parallélisés et rend les interblocages *impossibles*.
 De plus, les fonctions pures peuvent être facilement mises en cache et permettent des optimisations du compilateurs.
