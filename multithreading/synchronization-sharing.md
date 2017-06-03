@@ -7,7 +7,7 @@ shared(int)* p = new int;
 int * t = p; // ERREUR
 ```
 
-Par exemple, `std.concurrency.send` ne permet que d'envoyer des données `immutable` ou `shared` par passage de messages.  `shared` est transitif, donc si une classe ou un structure est marquée comme `shared`, tous ses membres le seront aussi. Notez que les variables `static` ne sont pas `shared` par défault parce qu'elles sont implémentées avec le stockage sur thread local (STL) et que chaque thread a une copie de la variable.
+Par exemple, `std.concurrency.send` ne permet que d'envoyer des données `immutable` ou `shared` par passage de messages.  `shared` est transitif, donc si une classe ou une structure est marquée comme `shared`, tous ses membres le seront aussi. Notez que les variables `static` ne sont pas `shared` par défaut parce qu'elles sont implémentées avec le stockage sur thread local (STL) et que chaque thread a une copie de la variable.
 
 Les blocs `synchronized` permettent de demander au compilateur de créer une section critique où ne peut entrer qu'un seul thread à la fois.
 
@@ -18,7 +18,7 @@ synchronized
 }
 ``` 
 
-Dans les méthodes de `class`, on peut associer plusieurs *mutexs* à ces blocs avec la syntaxe `synchronized(membre1, membre2)` pour réduire les risques de conflits. Le D insère automatiquement les *sections critiques*. Une classe complète peut être marqué comme `synchronized` et le compilateur s'assurera qu'un seul thread accède à une instance de la classe à la fois.
+Dans les méthodes de `class`, on peut associer plusieurs *mutexs* à ces blocs avec la syntaxe `synchronized(membre1, membre2)` pour réduire les risques de conflits. Le D insère automatiquement les *sections critiques*. Une classe complète peut être marquée comme `synchronized` et le compilateur s'assurera qu'un seul thread accède à une instance de la classe à la fois.
 
 Des opérations atomiques peuvent être effectuées sur des variables `shared` en utilisant la fonction `core.atomic.atomicOp`:
 
@@ -72,11 +72,11 @@ synchronized class SafeQueue(T)
 }
 
 /*
-Affichage un message de façon sûré,
+Affichage un message de façon sûre,
 indépendament du nombre de threads. Notez que
 les paramètres variadiques sont utilisés pour
-args! Cela signifie que args peut être entre 0
-et N paramètres.
+args! Cela signifie que args peut représenter
+entre 0 et N paramètres.
 */
 void safePrint(T...)(T args)
 {
