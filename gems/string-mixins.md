@@ -1,6 +1,6 @@
 # String Mixins
 
-L'expression `mixin` (__NdT: "mélanger dans"__) compile une chaîne de caractères contenant du code D et génère les instructions correspondantes. C'est purement une mécanique de **compilation** et ça ne peut fonctionner que quand les chaînes de caractères sont disponibles à la compiltion. Il ne faut pas confondre cette expression avec l'instruction javascript démoniaque `eval`.
+L'expression `mixin` (__NdT: "mélanger dans"__) compile une chaîne de caractères contenant du code D et génère les instructions correspondantes. C'est purement une mécanique de **compilation** et ça ne peut fonctionner que quand les chaînes de caractères sont disponibles à la compilation. Il ne faut pas confondre cette expression avec l'instruction javascript démoniaque `eval`.
 
 ```d
 mixin("int b = 5");
