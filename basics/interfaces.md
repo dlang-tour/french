@@ -1,6 +1,6 @@
 # Interfaces
 
-D permet de définir des `interface`s qui sont techniqument comme des types de classes, mais dont les méthodes doivent être implémentés par toute classe qui hérité de l'`interface`:
+D permet de définir des `interface`s qui sont techniquement comme des types de classes, mais dont les méthodes doivent être implémentées par toute classe qui hérite de l'`interface`:
 
 ```d
 interface Animal
