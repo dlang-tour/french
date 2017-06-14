@@ -23,7 +23,7 @@ router.regiserWebInterface(new WebService);
 listenHTTP(settings, router);
 ```
 
-Les chemins de l'interface web personnalisé `WebService` seront automatiquement déduits à partir des méthodes de la classe, selon un mécanisme simple:
+Les chemins de l'interface web personnalisée `WebService` seront automatiquement déduits à partir des méthodes de la classe, selon un mécanisme simple:
 
 * `index()` gérera `/`
 * `getName()` gérera la requête `GET` sur `/name`
@@ -76,7 +76,7 @@ class WebService
 
     /*
     L'attribut @path peut être utilisé pour
-    personnalisé les redirections d'URL. Ici
+    personnaliser les redirections d'URL. Ici
     les requêtes vers "/name" seront liés à la
     méthode getName
     */
@@ -86,7 +86,7 @@ class WebService
     {
         import std.string : format;
 
-        // Génère un header d'information
+        // Génère un en-tête d'information
         // composé de balises <li> en inspectant
         // les propriétés du header
         string[] headers;
