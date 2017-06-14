@@ -66,7 +66,7 @@ router.registerRestInterface(new Rest);
 
 Le *générateur d'interface REST* de vibe.d permet aussi de faire la même chose dans l'autre sens avec des requêtes POST qui transforment un objet JSON reçu en structure D.
 
-L'interface REST peut être utilisée pour générer un client REST qui envoie des requêtes JSON à un serveru de façon transparente. C'est très utile lorsque le code est partagé entre le client et le serveur.
+L'interface REST peut être utilisée pour générer un client REST qui envoie des requêtes JSON à un serveur de façon transparente. C'est très utile lorsque le code est partagé entre le client et le serveur.
 
 ```d
 auto api = new RestInterfaceClient!IRest("http://127.0.01:8000");
