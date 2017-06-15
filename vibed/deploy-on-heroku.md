@@ -8,14 +8,14 @@
 
 #### 1 : préparez le code
 
-Heroku a besoin de savoir comment communiquer avec une application déployée. Il y a donc une variable d'environnement `PORT` qui doit être injectée dans l'application. Cette dernière doit ensuite écouter sur ce port. Pour le développement, un porte par défaut (ici __8080__) est mis en place:
+Heroku a besoin de savoir comment communiquer avec une application déployée. Il y a donc une variable d'environnement `PORT` qui doit être injectée dans l'application. Cette dernière doit ensuite écouter sur ce port. Pour le développement, un port par défaut (ici __8080__) est mis en place:
 
 ```d
 shared static this()
 {
     //...
     auto settings = new HTTPServerSettings;
-    // Fourni un port par défait dans le cas où la variable $PORT n'existe pas.
+    // Fourni un port par défaut dans le cas où la variable $PORT n'existe pas.
     settings.port = environment.get("PORT", "8080").to!ushort;
     listenHTTP(settings, router);
 }
