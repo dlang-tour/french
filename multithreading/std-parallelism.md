@@ -15,15 +15,15 @@ foreach(ref i; parallel(tab))
 }
 ```
 
-`parallel` utilise l'opérateur `opApply` en interne. La méthode `parallel` est un raccourci pour `taskPool.parallel` qui est une `TaskPool` qui utilise *le nombre de cpus - 1* threads. Créer sa propre instance de l'objet permet de controler le degré de parallélisme.
+`parallel` utilise l'opérateur `opApply` en interne. La méthode `parallel` est un raccourci pour `taskPool.parallel` qui est une `TaskPool` qui utilise *le nombre de cpus - 1* threads. Créer sa propre instance de l'objet permet de contrôler le degré de parallélisme.
 
-Il faut faire attention à ce que le corps de l'itération de de `parallel` ne modifie pas des variables que d'autres threads pourraient utiliser.
+Il faut faire attention à ce que le corps de l'itération de `parallel` ne modifie pas des variables que d'autres threads pourraient utiliser.
 
 L'option `workingUnitSize` spécifie le nombre d'éléments gérés par chaque thread.
 
 ### reduce
 
-La fonction [`std.algorithm.iteration.reduce`](http://dlang.org/phobos/std_algorithm_iteration.html#reduce), connue dans d'autres langages fonctionelles sous le nome de *accumulate* ou de *foldl*, appelle la fonction `fun(acc, x)` pour chaque élément `x` où `acc` est le résultat de l'appelle précédent:
+La fonction [`std.algorithm.iteration.reduce`](http://dlang.org/phobos/std_algorithm_iteration.html#reduce), connue dans d'autres langages fonctionelles sous le nom de *accumulate* ou de *fold*, appelle la fonction `fun(acc, x)` pour chaque élément `x` où `acc` est le résultat de l'appelle précédent:
 
 ```d
 // 0 est la valeur de départ
@@ -33,8 +33,8 @@ auto sum = reduce!"a + b"(0, elements);
 [`Taskpool.reduce`](http://dlang.org/phobos/std_parallelism.html#.TaskPool.reduce) est une version parallèle de `reduce`:
 
 ```d
-// Détermine la somme des élements d'une range
-// en parallèle, en utilisant le premièr élément
+// Détermine la somme des éléments d'une range
+// en parallèle, en utilisant le premier élément
 // de la range comme valeur de départ de acc
 auto sum = taskPool.reduce!"a + b"(nums);
 ```
@@ -43,20 +43,20 @@ auto sum = taskPool.reduce!"a + b"(nums);
 
 ### `task()`
 
-[`task`](http://dlang.org/phobos/std_parallelism.html#.task) est une fonction qui permet d'appeler une autre fonction, qui pourrait prendre longtemps ou qui devrait être exécutée dans son propre thread. Il peut soit être mis dans la file d'attendre d'une taskpool:
+[`task`](http://dlang.org/phobos/std_parallelism.html#.task) est une fonction qui permet d'appeler une autre fonction, qui pourrait prendre longtemps ou qui devrait être exécutée dans son propre thread. Il peut soit être mis dans la file d'attente d'une taskpool:
 
 ```d
 auto t = task!read("foo.txt");
 taskPool.put(t);
 ```
 
-Ou directement exécuté sur un nouveau thread:
+soit être directement exécuté sur un nouveau thread:
 
 ```d
 t.executeInNewThread();
 ```
 
-Pour obtenir le résultat de la tâche, il faut appeller la méthode `yieldForce` de l'objet. Elle bloquera l'exécution jusqu'à ce que le résultat soit disponible.
+Pour obtenir le résultat de la tâche, il faut appeler la méthode `yieldForce` de l'objet. Elle bloquera l'exécution jusqu'à ce que le résultat soit disponible.
 
 ### Pour aller plus loin
 

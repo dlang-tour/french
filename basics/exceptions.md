@@ -1,10 +1,10 @@
 # Exceptions
 
-Ce guidene concerne que les `Exception`s utilisateurs. Les `Error`s du système sont généralement fatales et ne devrait **jamais** être interceptées.
+Ce guide ne concerne que les `Exception`s utilisateur. Les `Error`s du système sont généralement fatales et ne devraient **jamais** être interceptées.
 
 ### Attraper les exceptions
 
-Un cas typique d'utilisation d'exceptions et la validation de données entrées par l'utilisateur. Quand une exception est lancée, la pile sera déroulée jusqu'à ce qu'un bloc qui attrape l'exception soit trouvé.
+Un cas typique d'utilisation d'exceptions est la validation de données entrées par l'utilisateur. Quand une exception est lancée, la pile sera déroulée jusqu'à ce qu'un bloc qui attrape l'exception soit trouvé.
 
 ```d
 try
@@ -17,7 +17,7 @@ catch(FileException e)
 }
 ```
 
-Il est possible d'y avoir plusieurs blocs `catch`s et un bloc `finally` qui est exécuté que l'erreur soit survenue ou non. Les exceptions sont lancées avec l'instruction `thrown`.
+Il est possible d'avoir plusieurs blocs `catch`s et un bloc `finally` qui est exécuté que l'erreur soit survenue ou non. Les exceptions sont lancées avec l'instruction `throw`.
 
 ```d
 try
@@ -38,11 +38,11 @@ finally
 }
 ```
 
-Nous verrons dans un prochain chapitre que les gardes de portée sont souvent une meilleure solution sur le motif `try-finally`.
+Nous verrons dans un prochain chapitre que les gardes de portée sont souvent une meilleure solution que le motif `try-finally`.
 
-### Exceptions personallisées
+### Exceptions personnalisées
 
-On peut facimement hériter d'`Exception` et créer des exceptions personnalisées:
+On peut facilement hériter d'`Exception` et créer des exceptions personnalisées:
 
 ```d
 class UtilisateurNonTrouve : Exception
@@ -58,7 +58,7 @@ throw new UtilisateurNonTrouve("D-Man est en congés");
 
 ### Un monde sûr avec `nothrow`
 
-Le compilateur D peut garantir qu'une fonction ne peut pas lancer d'exceptions. Ces fonctions sont annotés avec le mot-clé `nothrow`.
+Le compilateur D peut garantir qu'une fonction ne peut pas lancer d'exceptions. Ces fonctions sont annotées avec le mot-clé `nothrow`.
 
 ```d
 bool lessThan(int a, int b) nothrow
@@ -71,7 +71,7 @@ bool lessThan(int a, int b) nothrow
 
 ### std.exception
 
-`std.exception` fourni une fonction `enforce` qui peut être utilisée comme `assert` mais qui lance une `Exception` à la place d'une `AssertError`:
+`std.exception` fournit une fonction `enforce` qui peut être utilisée comme `assert` mais qui lance une `Exception` à la place d'une `AssertError`:
 
 ```d
 import std.exception : enforce;
@@ -81,7 +81,7 @@ float magique = 1_000_000_000;
 enforce(magique + 42 - magique == 42, "Les mathématiques avec les nombres à virgule flottante sont marrantes");
 
 // Lance une exception personnalisée
-enforce!StringException('a' != 'A', "algorithme sensible à le casse");
+enforce!StringException('a' != 'A', "algorithme sensible à la casse");
 ```
 
 Cependant, il y a d'autres choses dans `std.exception`. Par exemple, quand l'erreur n'est pas fatale, il est possible d'utiliser `collectException` dessus:
@@ -119,8 +119,8 @@ void main()
 		writeln("Ligne: ", e.line);
 		writeln("Copie de pile:\n", e.info);
 
-        // Le format par défaut pour aussi être
-        // utilisé
+        // Le format par défaut pourrait aussi 
+	// être utilisé.
         // writeln(e);
     }
 }

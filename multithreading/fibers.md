@@ -2,7 +2,7 @@
 
 **Les fibres** sont un moyen d'implémenter la concurrence de façon *collaborative*. La classe `Fiber` est définie dans le module [`core.thread`](https://dlang.org/phobos/core_thread.html).
 
-L'idée de base est que quand une fibre n'a rien à faire ou qu'elle attend qu'on lui passe des données, elle le signal explicitement en appellant `Fiber.yield()`. Le contexte parent reprend alors le contrôle de l'exécution, mais l'état de la fibre, et de toutes ses variables est sauvegardé et continuera après l'appel à `Fiber.yield()`. Magique ? Oui.
+L'idée de base est que quand une fibre n'a rien à faire ou qu'elle attend qu'on lui passe des données, elle le signale explicitement en appelant `Fiber.yield()`. Le contexte parent reprend alors le contrôle de l'exécution, mais l'état de la fibre, et de toutes ses variables est sauvegardé et continuera après l'appel à `Fiber.yield()`. Magique ? Oui.
 
 ```d
 void foo()
@@ -17,9 +17,9 @@ f.call(); // affiche Bonjour
 f.call(); // affiche Tout le monde
 ```
 
-Cette fonctionnalité peut être utilisée pour implémenter de la concurrence où plusieurs fibres collaborent sur un seul coeur. L'avantage des fibres comparé aux threads est qu'elles consomment moins de ressource, puisqu'il n'y a pas besoin de passer d'un contexte à un autre.
+Cette fonctionnalité peut être utilisée pour implémenter de la concurrence où plusieurs fibres collaborent sur un seul coeur. L'avantage des fibres comparées aux threads est qu'elles consomment moins de ressources, puisqu'il n'y a pas besoin de passer d'un contexte à un autre.
 
-Un très bon usage de cette technique peut être vu dans la bibliothèque [vibe.d](http://vibed.org) qui implémente des opérations d'I/O asynchrones avec des fibres, ce qui rend le code très propre.
+Un très bon usage de cette technique peut être vu dans la bibliothèque [vibe.d](http://vibed.org) qui implémente des opérations d'E/S asynchrones avec des fibres, ce qui rend le code très propre.
 
 ### Pour aller plus loin
 
@@ -52,7 +52,7 @@ void fiberedRange(alias Fnc, R, T)(
 void main()
 {
     int squareResult, cubeResult;
-    // Créée une fibre qui est initialisée
+    // Crée une fibre qui est initialisée
     // avec un delegate qui génère une range
     // de carrés
     auto squareFiber = new Fiber({

@@ -33,14 +33,14 @@ filter!(a => a > 20)(range);
 laTresTresGrandeRange.take(10);
 ```
 
-`zip` — itère sur deux ranges en parallèle est retourne un tuple des deux éléments pendant son itération:
+`zip` — itère sur deux ranges en parallèle et retourne un tuple des deux éléments pendant son itération:
 
 ```d
 assert(zip([1,2], ["coucou", "vous"]).front
     == tuple(1, "hello"));
 ```
 
-`generate` — prend une fonction est créé une range qui appelle la fonction à chaque itération, par exemple:
+`generate` — prend une fonction et crée une range qui appelle la fonction à chaque itération, par exemple:
 
 ```d
 alias RandomRange = generate!(x => uniform(1, 1000));
@@ -76,8 +76,8 @@ void main()
 {
     string text = q"<Ceci vous donnera un aperçu
 de la puissance et de l'expressivité de ce
-langage de programmation système, qui compiler
-vers des exécutables binaires performantes>";
+langage de programmation système, qui compile
+vers des exécutables binaires performants>";
 
     // prédicat de séparation
     alias pred = c => canFind(" ,.\n", c);
@@ -91,21 +91,21 @@ vers des exécutables binaires performantes>";
       .map!"a.count";
 
     // Affiche le nombre de caractères
-    // par mots d'une belle façon
-    // en commencant par ceux qui ont
+    // par mot d'une belle façon
+    // en commençant par ceux qui ont
     // le moins de caractères
     zip(wordCharCounts, words)
       // conversion en tableau pour trier
       .array()
       .sort()
-      // on a pas besoin de mots  dupliqué 
+      // on n'a pas besoin de mots dupliqués
       // hein ?
       .uniq()
       // met tous les mots qui ont le même 
-      // nombre de caractère dans une seule 
-      // colonne. 
+      // nombre de caractères dans une
+      // seule colonne. 
       // chunkBy nous aide en générant des 
-      // ranges de range.
+      // ranges de ranges.
       .chunkBy!(a => a[0])
       // Ces éléments seront liés en
       // une seule ligne
