@@ -130,7 +130,7 @@ Ouvrez l'application dans votre navigateur avec la commande suivante:
 
     $ heroku open
 
-# Conteneurs dynos
+### Conteneurs dynos
 
 Après le déploiement, l'application s'exécute dans un conteneur web dyno. Dyno est un conteneur léger qui exécute la commande spécifiée dans le `Procfile`.
 
