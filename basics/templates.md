@@ -51,7 +51,7 @@ struct S(T)
 
 #### Ressources avancées
 
-- [Spécifichation des schémas en D](https://dlang.org/spec/template.html)
+- [Spécification des schémas en D](https://dlang.org/spec/template.html)
 - [Les modèles en D](http://dlang.org/templates-revisited.html):  Walter Bright écrit à propos de comment D améliore les templates C++.
 - [Modèles variadiques](http://dlang.org/variadic-function-templates.html): Articles à propos d'un idiome D qui permet d'implémenter des fonctions variadiques à l'aide de modèles variadiques
 
