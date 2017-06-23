@@ -26,13 +26,13 @@ Une conversion entre deux variables de types différents n'est autorisée par le
 
 Une conversion vers un autre type peut être forcée en utilisant l'expression `cast(TYPE) myVar`. Il faut l'utiliser prudemment car l'expression `cast` est autorisée à casser le système de typage.
 
-Le mot-clé `auto` créé une variable est déduit son type à partir l'expression qu'on lui assigne. `auto myVar = 7` va déduire que `myVar` est de type `int`. Le type reste à assigner au moment de la compilation et ne peut pas être changé, comme n'importe quelle variable avec un titre explicite.
+Le mot-clé `auto` crée une variable et déduit son type à partir l'expression qu'on lui assigne. `auto myVar = 7` va déduire que `myVar` est de type `int`. Le type reste à assigner au moment de la compilation et ne peut pas être changé, comme n'importe quelle variable avec un titre explicite.
 
 ### Propriétés des types
 
 Tous les types de données ont une propriété `.init` qui est leur valeur d'initialisation. Pour tous les entiers, cette valeur est `0` et pour tous les flottants, c'est `nan` (*not a number*).
 
-Les types entiers et flottants ont une propriété `.max` pour la plus haut valeur qu'ils peuvent représenter. Les entiers ont également une propriété `.min` pour la plus petite valeur qu'ils peuvent représenter, là où les flottants ont une propriété `.min_normal` qui est définie comme la plus petite valeur représentable qui n'est pas 0.
+Les types entiers et flottants ont une propriété `.max` pour la plus haute valeur qu'ils peuvent représenter. Les entiers ont également une propriété `.min` pour la plus petite valeur qu'ils peuvent représenter, là où les flottants ont une propriété `.min_normal` qui est définie comme la plus petite valeur représentable qui n'est pas 0.
 
 Les flottants ont également une propriété `.nan` (valeur indéfinie), `.infinity` (valeur infinie), `.dig` (nombre de chiffres après la virgule de précision), `.mant_dig` (nombres de bits de la mantisse) et d'autres.
 
