@@ -10,7 +10,7 @@ L'instruction `import` peut être utilisée pour importer uniquement certains sy
 
 Ces `import`s séléctifs peuvent permettre de rendre un programme plus clair en explicitant la provenance de chaque symbole, et c'est également un moyen d'éviter les conflits entre différents symboles qui ont le même nom dans différents modules.
 
-Un instruction `import` n'a pas besoin d'être tout en haut du fichier source. Elle peut être utilisée dans une fonction où à n'importe quel autre *scope*.
+Une instruction `import` n'a pas besoin d'être placée tout en haut du fichier source. Elle peut être utilisée dans une fonction où à n'importe quel autre *scope*.
 
 ## {SourceCode}
 
