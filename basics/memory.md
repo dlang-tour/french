@@ -14,7 +14,7 @@ Un nouveau bloc de mémoire sur le tas est alloué en utilisant l'expression `ne
 
     int* a = new int;
 
-Dès que l'espace mémoire référencé par `a` n'est plus référencée par aucun pointeur dans le programme, le ramasse-miettes libérera cet espace mémoire.
+Dès que l'espace mémoire référencé par `a` n'est plus référencé par aucun pointeur dans le programme, le ramasse-miettes libérera cet espace mémoire.
 
 D a trois niveaux de sécurité différents pour les fonctions : `@system`, `@trusted` et `@safe`.
 Sauf si précisé explicitement, le niveau par défaut est `@system`.
