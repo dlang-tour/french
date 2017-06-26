@@ -64,7 +64,7 @@ Il est également possible d'utiliser les `string`s brutes pour éviter le labor
 
 ```d
 string brute = `"string" brute`; // "string" brute
-string brute2 = r""string" brute"; // "string" brute
+string brute2 = r"`string` brute"; // `string` brute
 ```
 
 ### Aller plus loin
