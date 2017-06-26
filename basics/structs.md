@@ -73,7 +73,7 @@ p.faireChosePrivee(); // Interdit
 
 Si une méthode est déclarée avec `const`, elle ne sera pas autorisée à modifier
 un membre de la structure. C'est une garantie offerte par le compilateur.
-Déclarer une méthode `const` permet de l'appeller sur un objet `const` ou `immutable`, mais garantie également que la méthode ne changera pas l'état de l'objet.
+Déclarer une méthode `const` permet de l'appeller sur un objet `const` ou `immutable`, mais garantie également aux appelant que la méthode ne changera pas l'état de l'objet.
 
 ### Méthodes statiques
 
