@@ -20,7 +20,7 @@ Les objets `immutable` peuvent donc être partagées entre différents threads n
 
 ### `const`
 
-Les objets `const` ne peuvent pas être modifiés non plus. Cette restriction n'est valide que dans la portée courante. Un pointeur `const` peut être créé à partir d'un objet *mutable* ou `immutable`. Cela signifie qu'un objet peut être `const` dans la portée courante, mais que quelqu'un peut peut-être le modifier dans un autre contexte. Il est courant pour les API d'accepter des arguments `const` pour assurer qu'elles ne modifieront pas les données qu'on leur fournit en entrée, et pour permettre à la fonction de traiter des données *mutables* ou `immutable`.
+Les objets `const` ne peuvent pas être modifiés non plus. Cette restriction n'est valide que dans la portée courante. Un pointeur `const` peut être créé à partir d'un objet *mutable* ou `immutable`. Cela signifie qu'un objet peut être `const` dans la portée courante, mais que quelqu'un peut le modifier à partir d'un autre contexte. Il est courant pour les API d'accepter des arguments `const` pour assurer qu'elles ne modifieront pas les données qu'on leur fournit en entrée, car cela permet à la fonction de traiter des données *mutables* ou `immutable`.
 
 ```d
 
