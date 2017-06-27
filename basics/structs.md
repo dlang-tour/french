@@ -45,7 +45,7 @@ p = Person(30, 180); //assignation à une nouvelle instance
 ```
 
 Une `struct` peut contenir n'importe quel nombre de méthodes. Ces méthodes
-sont `public` par défaut, et donc accessibles depuis l'extérieure. Elles
+sont `public` par défaut, et donc accessibles depuis l'extérieur. Elles
 peuvent être `private` et donc n'être accessibles que depuis une autre 
 méthode de la même `struct`, ou d'un autre endroit dans le même module.
 
