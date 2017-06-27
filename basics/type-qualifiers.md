@@ -1,6 +1,6 @@
 # Mutabilité
 
-D est un langage typé statiquement: une fois qu'une variable a été déclarée, son type ne peut être modifié. Cela permet au compilateur d'empêcher certains bugs et de mettre en place certains restrictions à la compilation.
+D est un langage typé statiquement: une fois qu'une variable a été déclarée, son type ne peut être modifié. Cela permet au compilateur d'empêcher certains bugs et de mettre en place certaines restrictions à la compilation.
 Un typage sûr permet de créer des programmes importants sans erreurs et facilite leur maintenance.
 
 Il y a plusieurs qualificateurs de types en D, mais les plus utilisés sont `const` et `immutable`.
