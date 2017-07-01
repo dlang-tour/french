@@ -13,8 +13,8 @@ struct Person
 ```
 
 Une `struct` est toujours construite sur la pile (à moins
-qu'elle soit appellée avec `new`) et est copiée par **valeur**
-lorsqu'elle est passée en paramètres à une fonction.
+qu'elle soit appelée avec `new`) et est copiée par **valeur**
+lorsqu'elle est passée en paramètre à une fonction.
 
 ```d
 auto p = Person(30, 180, 3,1415);
@@ -73,18 +73,18 @@ p.faireChosePrivee(); // Interdit
 
 Si une méthode est déclarée avec `const`, elle ne sera pas autorisée à modifier
 un membre de la structure. C'est une garantie offerte par le compilateur.
-Déclarer une méthode `const` permet de l'appeller sur un objet `const` ou `immutable`, mais garantie également que la méthode ne changera pas l'état de l'objet.
+Déclarer une méthode `const` permet de l'appeler sur un objet `const` ou `immutable`, mais garantie également aux appelants que la méthode ne changera pas l'état de l'objet.
 
 ### Méthodes statiques
 
-Si une méthode est déclarée `static`, on pourra l'appeller sans objet instancié (par exemple `Person.methodeStatique()`) mais elle ne sera pas autorisée à accéder à des membres non-statiques. Cela peut être utilisé si une méthode n'a pas besoin d'accéder à un membre non-static de la structure, mais est lié logiquement à cette structure. Cela peut aussi être utilisé pour offrir une fonctionnalité sans créer d'instance explicite, par exemple, certains implémentations du patron de conception Singleton utilisent `static`.
+Si une méthode est déclarée `static`, on pourra l'appeler sans objet instancié (par exemple `Person.methodeStatique()`) mais elle ne sera pas autorisée à accéder à des membres non-statiques. Cela peut être utilisé si une méthode n'a pas besoin d'accéder à un membre non-static de la structure, mais est lié logiquement à cette structure. Cela peut aussi être utilisé pour offrir une fonctionnalité sans créer d'instance explicite, par exemple, certains implémentations du patron de conception Singleton utilisent `static`.
 
 ### Héritage
 
 Une `struct` ne peut pas hériter d'une autre `struct`.
 Des hiérarchies de types ne peuvent être construites qu'avec des classes,
 que nous verrons dans une prochaine aprtie.
-Cependant, avec `alias this` ou les `mixins`, on peut facilement obtenir du molyporphisme.
+Cependant, avec `alias this` ou les `mixins`, on peut facilement obtenir du polymorphisme.
 
 ### Pour aller plus loin
 
