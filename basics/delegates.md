@@ -42,7 +42,7 @@ Les objets `function` et `delegate` ne sont pas interchangeables. Mais la foncti
 
 ### Fonction anonymes et lambdas
 
-Les fonctions pouvant être stockées dans des varibles et passées en paramètres à d'autres fonctions, il est parfois laborieux de leur donner un nom et de les définir précisément. C'est pour celà que D permet de définir des fonctions anonymes et des _lambdas_:
+Les fonctions pouvant être stockées dans des variables et passées en paramètres à d'autres fonctions, il est parfois laborieux de leur donner un nom et de les définir précisément. C'est pour celà que D permet de définir des fonctions anonymes et des _lambdas_:
 
 ```d
 auto f = (int gauche, int droite){
@@ -52,7 +52,7 @@ auto f = (int gauche, int droite){
 auto f = (int gauche, int droite) // Lambda — convertie en interne vers la fonction ci-avant
 ```
 
-Il est également de passer de chaîne de caractères contenant des fonctions en paramètres de schémas à certaines parties fonctionelles de la librairie standard. Par exemple, ils permettent de définir des algorithmes de _réduction_ de façon concise:
+Il est également possible de passer des chaînes de caractères contenant des fonctions en paramètres de schémas à certaines parties fonctionelles de la librairie standard. Par exemple, elles permettent de définir des algorithmes de _réduction_ de façon concise:
 
 ```d
 [1,2,3].reduce!'a + b'; // 6
