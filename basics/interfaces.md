@@ -28,7 +28,7 @@ chien.faireBruit();
 ### Le pattern NVI (non virtual interface)
 
 Le pattern [NVI](https://en.wikipedia.org/wiki/Non-virtual_interface_pattern) (Patron de conception d'interface non-virtuelle dans la langue de Molière) permet la définition d'exécutions types en autorisant la définition de méthode _non virtuelles_ pour une interface.
-On peut facilement mettre en place ce pattern en D, puisque le langage autorise la définition de fonctions `final` dans une `interface` que l'on ne peut pas surcharger. Cela force un certain comportement qui est customisé par la surcharger des autres méthodes de l'`interface`:
+On peut facilement mettre en place ce pattern en D, puisque le langage autorise la définition de fonctions `final` dans une `interface` que l'on ne peut pas surcharger. Cela force un certain comportement qui est customisé par la surcharge d'autres méthodes abstraites de l'`interface`:
 
 ```d
 interface Animal
