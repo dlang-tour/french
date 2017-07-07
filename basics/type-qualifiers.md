@@ -16,11 +16,11 @@ immutable int err = 5;
 err = 5; // ne compilera pas : ERREUR
 ```
 
-Les objets `immutable` peuvent donc être partagées entre différents threads non-synchronisés sans risques puisqu'ils ne changent pas par définition. Cela impliquement également que les objets `immutable` peuvent être mis en cache parfaitement.
+Les objets `immutable` peuvent donc être partagés entre différents threads non-synchronisés sans risques puisque par définition ils ne changent pas. Cela implique également que les objets `immutable` peuvent être mis en cache parfaitement.
 
 ### `const`
 
-Les objets `const` ne peuvent pas être modifiés non plus. Cette restriction n'est valide que dans la portée courante. Un pointeur `const` peut être créé à partir d'un objet *mutable* ou `immutable`. Cela signifie qu'un objet peut être `const` dans la portée courante, mais que quelqu'un peut le modifier à partir d'un autre contexte. Il est courant pour les API d'accepter des arguments `const` pour assurer qu'elles ne modifieront pas les données qu'on leur fournit en entrée, car cela permet à la fonction de traiter des données *mutables* ou `immutable`.
+Les objets `const` ne peuvent pas non plus être modifiés. Cette restriction n'est valide que dans la portée courante. Un pointeur `const` peut être créé à partir d'un objet *mutable* ou `immutable`. Cela signifie qu'un objet peut être `const` dans la portée courante, mais que quelqu'un peut le modifier à partir d'un autre contexte. Il est courant pour les API d'accepter des arguments `const` pour assurer qu'elles ne modifieront pas les données qu'on leur fournit en entrée, car cela permet à la fonction de traiter des données *mutables* ou `immutable`.
 
 ```d
 
