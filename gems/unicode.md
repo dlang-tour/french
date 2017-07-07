@@ -1,14 +1,14 @@
 # Unicode en D
 
-Unicode est un standard international pour encoder et représenter du texte informatiquement. D support complètement l'unicode dans le langage et dans sa librairie standard.
+Unicode est un standard international pour encoder et représenter du texte informatiquement. D supporte complètement l'unicode dans le langage et dans sa librairie standard.
 
 ## Qu'est ce que c'est ? Pourquoi ?
 
 Les ordinateurs, au niveau éléctronique, n'ont aucune idée de ce qu'est du texte, puisqu'ils ne travaillent qu'avec des nombres. Il faut donc un moyen pour le code d'interagir avec des données textuelles et des les représenter sous forme binaire. La méthode de transformation est appelée un *encodage*, et Unicode est un encodage.
 
-Pour voir la représentation numériques des chaînes de l'exemple, lancez simplement le programme.
+Pour voir la représentation numérique des chaînes de l'exemple, lancez simplement le programme.
 
-Unicode est unique au monde, car il permet de représenter tous les langages du monde avec un seul encodage. Avant Unicode, les ordinateurs de différents fabriquants et vendus dans différentes régions du monde avaient du mal à communiquer, et dans certains cas l'encodage n'était pas supporté du tout, ce qui rendait impossible l'affichage du texte. 
+Unicode est unique, car il permet de représenter tous les langages du monde avec un seul encodage. Avant Unicode, les ordinateurs de différents fabriquants et vendus dans différentes régions du monde avaient du mal à communiquer, et dans certains cas l'encodage n'était pas supporté du tout, ce qui rendait impossible l'affichage du texte. 
 
 Pour plus d'informations sur Unicode et les détails techniques, lisez l'article wikipédia sur Unicode dont vous pouvez trouver le lien dans la section "Pour aller plus loin"
 
@@ -18,7 +18,7 @@ Unicode a résolu la plupart de ces problèmes et est très bien supporté sur t
 
 En D, `string`, `wstring` et `dstring` sont respectivement des chaînes de caractères encodés en UTF-8, UTF-16 et UTF-32. Les types de leur caractères sont `char`, `wchar` et `dchar`.
 
-D'après la spécification, c'est une erreur de stocker une chaîne des données non Unicode dans un type de string; attendez-vous à ce que vos programmes plantent si votre chaîne est mal encodée.
+D'après la spécification, c'est une erreur de stocker des données non Unicode dans un type de string; attendez-vous à ce que vos programmes plantent si votre chaîne est mal encodée.
 
 Pour stocker d'autres encodages, ou pour obtenir un comportement similaire à celui de C/C++, vous pouvez utiliser `ubyte[]` ou `char*`.
 
@@ -34,7 +34,7 @@ Premièrement, pour le confort de programmation, quand on itère sur une `string
 static assert(is(typeof(utf8.front) == dchar));
 ```
 
-Ce comportement impliques plusieurs choses, parmi lesquelles le fait que `std.traits.hasLength!string == false`. Pourquoi ? Parce que, en terme d'API des ranges, la méthode `length` des `string`s retournera le **nombre d'éléments de la chaîne** et pas le nombre d'éléments sur lesquels la chaîne va itérer.
+Ce comportement implique plusieurs choses, parmi lesquelles le fait que `std.traits.hasLength!string == false`. Pourquoi ? Parce que, en terme d'API des ranges, la méthode `length` des `string`s retournera le **nombre d'éléments de la chaîne** et pas le nombre d'éléments sur lesquels la chaîne va itérer.
 
 Dans l'exemple, vous pouvez voir pourquoi ces deux choses ne sont pas toujours égales. De ce fait, les algorithmes de range dans Phobos se comportent comme si les `string`s n'avaient pas d'informations sur leur longueur.
 
