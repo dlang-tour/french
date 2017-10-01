@@ -43,10 +43,25 @@ Cette visite est [open-source](https://github.com/dlang-tour) et nous accueillon
 
 ```d
 import std.stdio;
+import std.algorithm;
+import std.range;
 
-// Allons-y !
 void main()
 {
-    writeln("Bonjour tout le monde !");
+    // Commençons !
+    writeln("Hello World!");
+
+    // Un exemple pour programmeurs expérimentés :
+    // Prend trois listes, et sans allouer
+    // de nouvelle mémoire, effectue un tri
+    // traversant les listes existantes
+    int[] arr1 = [4, 9, 7];
+    int[] arr2 = [5, 2, 1, 10];
+    int[] arr3 = [6, 8, 3];
+    sort(chain(arr1, arr2, arr3));
+    writefln("%s\n%s\n%s\n", arr1, arr2, arr3);
+    // Pour en apprendre plus sur cet exemple, voir
+    // la page "Algorithmes de range" dans le menu
+    // "Quelques bouchées de D"
 }
 ```
