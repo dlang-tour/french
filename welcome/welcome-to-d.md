@@ -10,7 +10,7 @@ Cette visite donne un aperçu de ce langage __puissant__ et __expressif__ qui se
 
 ### Qu'est-ce que le langage D ?
 
-Le D est le résultat de _décennies d'expérience dans la conception de compilateurs_ pour de nombreux langages, et c'est un langage aux [fonctionnalités uniques](http://dlang.org/overview.html): 
+Le D est le résultat de _décennies d'expérience dans la conception de compilateurs_ pour de nombreux langages, et c'est un langage aux [fonctionnalités uniques](http://dlang.org/overview.html):
 
 {{#dmandesktop}}
 
@@ -49,19 +49,20 @@ import std.range;
 void main()
 {
     // Commençons !
-    writeln("Hello World!");
+    writeln("Bonjour tout le monde !");
 
-    // Un exemple pour programmeurs expérimentés :
-    // Prend trois listes, et sans allouer
-    // de nouvelle mémoire, effectue un tri
-    // traversant les listes existantes
+    // Un exemple pour programmeurs
+    // expérimentés : prend trois listes,
+    // et sans allouer de nouvelle mémoire,
+    // effectue un tri traversant les listes
+    // existantes
     int[] arr1 = [4, 9, 7];
     int[] arr2 = [5, 2, 1, 10];
     int[] arr3 = [6, 8, 3];
     sort(chain(arr1, arr2, arr3));
     writefln("%s\n%s\n%s\n", arr1, arr2, arr3);
-    // Pour en apprendre plus sur cet exemple, voir
-    // la page "Algorithmes de range" dans le menu
-    // "Quelques bouchées de D"
+    // Pour en apprendre plus sur cet exemple,
+    // voir la page "Algorithmes de range" dans
+    // le menu "Quelques bouchées de D"
 }
 ```
