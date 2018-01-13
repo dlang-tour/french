@@ -11,9 +11,9 @@ void faireQqch(int function(int,int) faiseur)
     faiseur(5,5);
 }
 
-faireQqch(additioner); // utilise la fonction globale `additioner`
-                       // additioner doit prendre deux paramètres
-                       // entiers
+faireQqch(&additioner); // utilise la fonction globale `additioner`
+                        // additioner doit prendre deux paramètres
+                        // entiers
 ```
 
 `faireQqch` peut être appellé comme n'importe quelle autre fonction
