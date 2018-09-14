@@ -37,7 +37,7 @@ for(int i = 0; i < tab.length; i++)
 
 ### 4) `foreach`
 
-La boucle `foreach` qui sera expliquée plus en détail dans un prochain chapitre:
+La boucle `foreach` qui sera expliquée plus en détail dans un prochain chapitre :
 
 ```d
 foreach(elem; tab)
@@ -48,7 +48,7 @@ foreach(elem; tab)
 
 #### Mot-clés et labels
 
-La mot-clé `break` arrête immédiatement la boucle courante. Dans une boucle imbriquée, un _label_ peut être utilisé pour arrêter une boucle externe:
+La mot-clé `break` arrête immédiatement la boucle courante. Dans une boucle imbriquée, un _label_ peut être utilisé pour arrêter une boucle externe :
 
 ```d
 outer: for(int i = 0; i < 10; i++)
