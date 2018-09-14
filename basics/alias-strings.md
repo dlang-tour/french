@@ -1,6 +1,6 @@
 # Alias et chaînes de caractères
 
-Maintenant que nous savons ce que sont les tableaux, et que nous avons jeté un coup d'œil au mot-clé `immutable` et aux types fondamentaux, il est temps d'introduire deux nouvelles constructions en une ligne :
+Maintenant que nous savons ce que sont les tableaux, que nous avons jeté un coup d'œil au mot-clé `immutable` et aux types fondamentaux, il est temps d'introduire deux nouvelles constructions en une ligne :
 
     alias string = immutable(char)[];
 
