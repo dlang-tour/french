@@ -2,7 +2,7 @@
 
 Les tranches sont des objets de type `T[]` pour n'importe quel type `T`.
 Les tranches sont une abstraction qui représentent une partie d'un tableau de valeur de type `T`, ou le tableau en entier.
-**Les tranches et les tableaux dynamiques sont identiques.**
+**Les tranches et les tableaux dynamiques représentent la même chose.**
 
 Une tranche contient deux membres : un pointeur vers l'élément de départ et la longueur de la tranche :
 
