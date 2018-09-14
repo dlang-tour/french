@@ -46,7 +46,7 @@ Quand on utilise la syntaxe `tab[index]` pour accéder à un élément d'un tabl
 
 ### Exercice
 
-Completez la fonction `encrypt` pour déchiffrer le message secret. Le texte devrait être chiffré en utilisant le *chiffrement de César*, qui remplace les caractères de l'alphabet en utilisant un certain décalage. Le texte à chiffrer contient des caractères entre `a` et `z`, ce qui devrait rendre les choses plus simples.
+Complétez la fonction `encrypt` pour déchiffrer le message secret. Le texte devrait être chiffré en utilisant le *chiffrement de César*, qui remplace les caractères de l'alphabet en utilisant un certain décalage. Le texte à chiffrer contient des caractères entre `a` et `z`, ce qui devrait rendre les choses plus simples.
 
 ### Aller plus loin
 
