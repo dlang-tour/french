@@ -8,7 +8,7 @@ Le terme `string` est défini par une instruction `alias` qui le défini comme u
 
 Étant immutables, les `string`s peuvent parfaitement être partagées entre différents threads. Une `string` est une tranche, qu'on peut retrancher sans réallouer de mémoire. La fonction de la bibliothèque standard `std.algorithm.splitter` par exemple, peut séparer une chaîne de caractères en différentes parties séparées par un retour à ligne sans allouer de mémoire.
 
-En plus de la chaîne de caractères UTF-8 `string`, il y a deux autres types:
+En plus de la chaîne de caractères UTF-8 `string`, il y a deux autres types :
 
 ```d
 alias wstring = immutable(wchar)[]; // UTF-16
@@ -27,7 +27,7 @@ string maString = to!string(maString);
 Cela signifie qu'une `string` est définie comme un tableau de [codets](http://unicode.org/glossary/#code_unit) unicode 8-bits. Toutes les opérations sur les tableaux peuvent être utilisées sur les chaînes de caractères, mais elles travailleront au niveau des codets et pas au niveau des caractères.
 De la même façon, les algorithmes de la bibliothèque standard traiteront les `string`s comme des séquences de [points de code](http://unicode.org/glossary/#code_point), ou éventuellement comme une séquence de [graphèmes](http://unicode.org/glossary/#grapheme) si on utilise [`std.uni.byGrapheme`](https://dlang.org/library/std/uni/by_grapheme.html).
 
-Ce petit example illustre ces différences:
+Ce petit example illustre ces différences :
 
 ```d
 string s = "\u0041\u0308"; // Ä
