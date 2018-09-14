@@ -26,7 +26,7 @@ do
 
 ### 3) Boucle `for` classique
 
-La boucle classique `for` que l'on peut retrouver en C/C++ ou en Java avec un _initialiseur_, une _condition de boucle_ et une _instruction de boucle_:
+La boucle classique `for` que l'on peut retrouver en C/C++ ou en Java avec un _initialiseur_, une _condition de boucle_ et une _instruction de boucle_ :
 
 ```d
 for(int i = 0; i < tab.length; i++)
