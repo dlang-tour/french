@@ -4,7 +4,7 @@ Il existe 4 types de boucles en D.
 
 ### 1) `while`
 
-Une boucle `while` exécute un bloc d'instructions tant qu'une certaine condition est remplie:
+Une boucle `while` exécute un bloc d'instructions tant qu'une certaine condition est remplie :
 
 ```d
 while (condition)
@@ -26,7 +26,7 @@ do
 
 ### 3) Boucle `for` classique
 
-La classique boucle `for` que l'on peut retrouver en C/C++ ou en Java avec un _initialiseur_, une _condition de boucle_ et une _instruction de boucle_:
+La boucle classique `for` que l'on peut retrouver en C/C++ ou en Java avec un _initialiseur_, une _condition de boucle_ et une _instruction de boucle_:
 
 ```d
 for(int i = 0; i < tab.length; i++)
