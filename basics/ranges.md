@@ -1,6 +1,6 @@
 # Ranges
 
-Lorsque le compilateur rencontre un `foreach`:
+Lorsque le compilateur rencontre un `foreach` :
 
 ```
 foreach(element; range)
@@ -9,7 +9,7 @@ foreach(element; range)
 }
 ```
 
-Il réecrit le code en interne en quelque chose de similaire à ceci:
+Il réecrit le code en interne en quelque chose de similaire à ceci :
 
 ```
 for(auto __copieRange = range;
@@ -23,7 +23,7 @@ for(auto __copieRange = range;
 
 Si cet objet range est un type par référence (ex. une classe), alors la range sera consommée et ne sera plus disponible pour une future itération (à moins que le corps de la boucle termine l'itération avant la dernière boucle normale). Si l'objet range est un type par valeur, alors une copie de la range sera faite et en fonction de la façon dont la range est définie, la boucle consommera ou ne consommera pas la range originale. La plupart des ranges de la librairie standard sont des `struct`s et donc une itération `foreach` est généralement non-destructive, même si cela n'est pas garanti. Si cette garantie est importante, une **forward** range est requise.
 
-Un objet qui satisfait cet interface est appellé une **range** et on peut donc itérer dessus:
+Un objet qui satisfait cet interface est appellé une **range** et on peut donc itérer dessus :
 
 ```
 struct Range
@@ -37,7 +37,7 @@ Notez que s'il est d'usage pour `empty` et `front` d'être définies comme des f
 
 Les fonctions de `std.range` et `std.algorithm` fournissent les briques de base pour profiter de cette interface. Les ranges nous permettent de créer des algorithmes complexes à partir d'objets sur lesquels on peut itérer facilement. De plus, les ranges nous permettent de créer des objets **paresseux** qui ne font un calcul que quand c'est réellement nécessaire, par exemple quand le prochain élément de la range est demandée. Des algorithmes spécifiques aux ranges seront présentés dans un prochain chapitre.
 
-### Exercise
+### Exercice
 
 Complétez le code source d'exemple pour créer la range `FibonacciRange` qui retourne les nombres de la [suite de Fibonacci](https://fr.wikipedia.org/wiki/Suite_de_Fibonacci).
 

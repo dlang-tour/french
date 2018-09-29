@@ -2,7 +2,7 @@
 
 Les tranches sont des objets de type `T[]` pour n'importe quel type `T`.
 Les tranches sont une abstraction qui représentent une partie d'un tableau de valeur de type `T`, ou le tableau en entier.
-**Les tranches et les tableaux dynamiques sont la même chose**
+**Les tranches et les tableaux dynamiques représentent la même chose.**
 
 Une tranche contient deux membres : un pointeur vers l'élément de départ et la longueur de la tranche :
 
@@ -22,11 +22,11 @@ assert(tab.length == 5); // mémoire référencée par tab.ptr
 
 Dans ce cas, la mémoire allouée est gérée par le ramasse-miettes. La tranche retournée agit comme une "vue" des éléments sous-jacents.
 
-### Recupérer une tranche vers une zone mémoire existante
+### Récupérer une tranche vers une zone mémoire existante
 
 Utiliser l'opérateur de *tranchage* permet de récupérer une tranche pointant vers une zone mémoire qui a déjà été allouée. L'opérateur de tranchage peut être appliqué à une autre tranche, à un tableau statique, à des `structs` ou des classes qui implémentent la méthode `opSlice` et à quelques autres entités.
 
-Dans un expression `origine[start..end]`, l'opérateur de tranchage est utilisé pour obtenir une tranche de tous les élements d'`origine` de `start` à l'élément **avant** `end`:
+Dans une expression `origine[start..end]`, l'opérateur de tranchage est utilisé pour obtenir une tranche de tous les élements d'`origine` de `start` à l'élément **avant** `end`:
 
 ```d
 auto newTab = tab[1 .. 4]; // l'élément d'indexe 4 n'est PAS inclus

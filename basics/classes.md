@@ -7,11 +7,11 @@ Toutes les classes héritent de [`Object`](https://dlang.org/phobos/object.html)
     class Foo { } // hérite de Object
     class Bar : Foo {} // Bar est également un Foo
 
-Les classes en D sont générallement instanciées sur le tas en utilisant `new`:
+Les classes en D sont généralement instanciées sur le tas en utilisant `new` :
 
     auto bar = new Bar;
 
-Les objets de type classe sont toujours des types par référence et contrairement aux `struct` ne sont pas copiés par valeur:
+Les objets de type classe sont toujours des types par référence et contrairement aux `struct` ne sont pas copiés par valeur :
 
     Bar bar = foo; // bar pointe vers foo
 
@@ -19,7 +19,7 @@ Le ramasse-miette s'assurera que la mémoire est libérée quand il n'y a plus a
 
 ### Héritage
 
-Si une méthode d'une classe de base est surchargée, le mot clé `override` doit être utilisé pour l'indiquer. Cela protège des surcharges accidentelles de fonctions:
+Si une méthode d'une classe de base est surchargée, le mot clé `override` doit être utilisé pour l'indiquer. Cela protège des surcharges accidentelles de fonctions :
 
     class Bar : Foo {
         override fonctionDeFoo() {}
@@ -36,7 +36,7 @@ En D, les classes ne peuvent hériter que d'une seule classe.
 
 ### Comparer des classes
 
-Pour les objets de type classe, les opérateurs `==` et `!=` comparent le contenu des objets. De ce fait, comparer une classe avec `null` est une erreur, puisque `null` n'a pas de contenu. L'opérateur `is` comparent deux classes pour voir si elles sont identiques. Pour tester la différence, utilisez `e1 !is e2`:
+Pour les objets de type classe, les opérateurs `==` et `!=` comparent le contenu des objets. De ce fait, comparer une classe avec `null` est une erreur, puisque `null` n'a pas de contenu. L'opérateur `is` compare deux classes pour voir si elles sont identiques. Pour tester la différence, utilisez `e1 !is e2` :
 
 ```d
 MaClasse c;

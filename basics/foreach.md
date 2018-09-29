@@ -9,7 +9,7 @@ plus lisibles et réduisent les possibilités d'erreurs.
 
 Avec un tableau `tab` de type `int[]`, il est possible
 d'itérer sur ses éléments en utilisant une boucle 
-`foreach`:
+`foreach` :
 
 ```d
 foreach(int e; tab)
@@ -19,7 +19,7 @@ foreach(int e; tab)
 ```
 Le premier champ de l'appel à `foreach` est le nom de
 la variable qui sera utilisée dans l'itération. Son 
-type peut être déduit automatiquement:
+type peut être déduit automatiquement :
 
 ```d
 foreach(e; tab)
@@ -39,7 +39,7 @@ pendant l'itération. C'est acceptable pour des types
 fondamentaux mais peut devenir très problématique pour des
 types plus grands. Pour empêcher la copie ou pour pouvoir
 modifier les éléments dans la boucle, `ref` peut être 
-utilisé:
+utilisé :
 
 ```d
 foreach(ref e; tab)
@@ -50,8 +50,8 @@ foreach(ref e; tab)
 
 ### Itérer `n` fois
 
-D permet d'écrire des boucles qui doivent être exécutés
-`n` fois de manière concise avec la syntaxe `..`:
+D permet d'écrire des boucles qui doivent être exécutées
+`n` fois de manière concise avec la syntaxe `..` :
 
 ```d
 foreach(i; 0..3)
@@ -62,12 +62,12 @@ foreach(i; 0..3)
 ```
 
 Le dernier nombre dans `a..b` est exclu de l'intervalle,
-cette boucle est donc éxecuté `3` fois.
+cette boucle est donc éxecutée `3` fois.
 
 ### Itération avec compteur d'index
 
 Pour les tableaux, il est également possible d'accéder
-à l'index en le stockant dans une variable:
+à l'index en le stockant dans une variable :
 
 ```d
 foreach(i, e; [4,5,6])

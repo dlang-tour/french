@@ -37,7 +37,7 @@ compilateurs qui peuvent être récupérés sur la page de téléchargement de [
 * [**LDC**](https://github.com/ldc-developers/ldc#installation) qui utilise le backend LLVM
 
 GDC  et LDC n'utilisent pas toujours la version la plus récente du frontend de DMD,
-mais ils permettent un meilleur niveau d'optimisation et la support d'autres 
+mais ils permettent un meilleur niveau d'optimisation et le support d'autres 
 plateformes commme par exemple ARM.
 
 Consultez le wiki pour [plus d'informations](https://wiki.dlang.org/Compilers)
