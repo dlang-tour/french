@@ -9,7 +9,7 @@ plus lisibles et réduisent les possibilités d'erreurs.
 
 Avec un tableau `tab` de type `int[]`, il est possible
 d'itérer sur ses éléments en utilisant une boucle 
-`foreach`:
+`foreach` :
 
 ```d
 foreach(int e; tab)
@@ -17,82 +17,82 @@ foreach(int e; tab)
     writeln(e);
 }
 ```
- Le premier champ de l'appel à `foreach` est le nom de
- la variable qui sera utilisée dans l'itération. Son 
- type peut être déduit automatiquement:
+Le premier champ de l'appel à `foreach` est le nom de
+la variable qui sera utilisée dans l'itération. Son 
+type peut être déduit automatiquement :
 
- ```d
- foreach(e; tab)
- {
-     assert(typeof(e).stringof == "int"); // e est un int
- }
+```d
+foreach(e; tab)
+{
+    assert(typeof(e).stringof == "int"); // e est un int
+}
+```
+
+Le second champ doit être un tableau, ou un objet spécial
+sur lequel on peut itérer, qu'on appelle **range** et
+qu'on introduira dans le prochain chapitre.
+
+### Accès par référence
+
+Les éléments seront copiés depuis le tableau ou la range
+pendant l'itération. C'est acceptable pour des types
+fondamentaux mais peut devenir très problématique pour des
+types plus grands. Pour empêcher la copie ou pour pouvoir
+modifier les éléments dans la boucle, `ref` peut être 
+utilisé :
+
+```d
+foreach(ref e; tab)
+{
+    e = 10; // overwrite value
+}
  ```
 
- Le second champ doit être un tableau, ou un objet spécial
- sur lequel on peut itérer, qu'on appelle **range** et
- qu'on introduira dans le prochain chapitre.
+### Itérer `n` fois
 
- ### Accès par référence
+D permet d'écrire des boucles qui doivent être exécutées
+`n` fois de manière concise avec la syntaxe `..` :
 
- Les éléments seront copiés depuis le tableau ou la range
- pendant l'itération. C'est acceptable pour des types
- fondamentaux mais peut devenir très problématique pour des
- types plus grands. Pour empêcher la copie ou pour pouvoir
- modifier les éléments dans la boucle, `ref` peut être 
- utilisé:
+```d
+foreach(i; 0..3)
+{
+    writeln(i);
+}
+// 0 1 2
+```
 
- ```d
- foreach(ref e; tab)
- {
-     e = 10; // overwrite value
- }
- ```
+Le dernier nombre dans `a..b` est exclu de l'intervalle,
+cette boucle est donc éxecutée `3` fois.
 
- ### Itérer `n` fois
+### Itération avec compteur d'index
 
- D permet d'écrire des boucles qui doivent être exécutés
- `n` fois de manière concise avec la syntaxe `..`:
+Pour les tableaux, il est également possible d'accéder
+à l'index en le stockant dans une variable :
 
- ```d
- foreach(i; 0..3)
- {
-     writeln(i);
- }
- // 0 1 2
- ```
+```d
+foreach(i, e; [4,5,6])
+{
+    writeln(i, ":", e);
+}
+// 0:4 1:5 2:6
+```
 
- Le dernier nombre dans `a..b` est exclu de l'intervalle,
- cette boucle est donc éxecuté `3` fois.
+### Itération inversée avec `foreach_reverse`
 
- ### Itération avec compteur d'index
+On peut itérer sur une collection à l'envers avec
+`foreach_reverse`:
 
- Pour les tableaux, il est également possible d'accéder
- à l'index en le stockant dans une variable:
+```d
+foreach_reverse (e; [1,2,3])
+{
+    writeln(e);
+}
+// 3 2 1
+```
 
- ```d
- foreach(i, e; [4,5,6])
- {
-     writeln(i, ":", e);
- }
- // 0:4 1:5 2:6
- ```
+### Pour aller plus loin
 
- ### Itération inversée avec `foreach_reverse`
-
- On peut itérer sur une collection à l'envers avec
- `foreach_reverse`:
-
- ```d
- foreach_reverse (e; [1,2,3])
- {
-     writeln(e);
- }
- // 3 2 1
- ```
-
- ### Pour aller plus loin
-
- - [`foreach` dans _Programming in D_](http://ddili.org/ders/d.en/foreach.html)
+- [`foreach` dans _Programming in D_](http://ddili.org/ders/d.en/foreach.html)
 - [`foreach` avec des `structs` and des classes  _Programming in D_](http://ddili.org/ders/d.en/foreach_opapply.html)
 - [spécification de `foreach`](https://dlang.org/spec/statement.html#ForeachStatement)
 

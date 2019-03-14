@@ -4,7 +4,7 @@ D comprend nativement des *tableaux associatifs*, aussi connus sous le nom de ta
 
     int[string] tab;
 
-On peut alors accéder à un valeur par sa clé, et donc la modifier:
+On peut alors accéder à une valeur par sa clé, et donc la modifier:
 
     tab["clé1"] = 10;
 

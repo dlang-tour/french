@@ -23,9 +23,9 @@ Le D est le résultat de _décennies d'expérience dans la conception de compila
 - permet une gestion sûre de la mémoire (SafeD)
 - du code _maintenable_ et _lisible_
 - une courbe d'apprentissage courte (syntaxe similiare au C, à Java et à d'autres)
-- interfaçable avec des librairies C
+- interfaçable avec des bibliothèques C
 - multi-paradigme (impératif, structuré, orienté objet, générique, fonctionnel et même assembleur)
-- prévention des erreurs intégrée (contrats, tests unitaires)
+- prévention des erreurs intégrées (contrats, tests unitaires)
 
 ... et beaucoup d'autres [fonctionnalités](http://dlang.org/overview.html)
 

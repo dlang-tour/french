@@ -23,9 +23,9 @@ ses dépendances puis exécute automatiquement le résultat:
 
   rdmd hello.d
  
-Sur les systèmes UNIX, la ligne spéciale `#!/usr/bin/env rdmd` pour être
-mis en première ligne d'un fichier D pour pouvoir utiliser ce dernier
-comme un script.
+Sur les systèmes UNIX, le [shebang](https://fr.wikipedia.org/wiki/Shebang)
+`#!/usr/bin/env rdmd` peut être mis en première ligne d'un fichier D 
+pour pouvoir utiliser ce dernier comme un script.
 
 Explorez la [documentation](https://dlang.org/rdmd.html) ou exécutez
 `rdmd --help` pour plus d'informations sur les options.
