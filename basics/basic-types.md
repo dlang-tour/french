@@ -26,7 +26,7 @@ Une conversion entre deux variables de types différents n'est autorisée par le
 
 Une conversion vers un autre type peut être forcée en utilisant l'expression `cast(TYPE) myVar`. Il faut l'utiliser prudemment car l'expression `cast` est autorisée à casser le système de typage.
 
-Le mot-clé `auto` crée une variable dont le type est déduit à partir l'expression qu'on lui assigne. `auto myVar = 7` va déduire que `myVar` est de type `int`. Le type reste à assigner au moment de la compilation et ne peut pas être changé, comme n'importe quelle variable avec un type explicite.
+Le mot-clé `auto` crée une variable et déduit son type à partir de l'expression qu'on lui assigne. `auto myVar = 7` va déduire que `myVar` est de type `int`. Notez que comme n'importe quelle variable avec un type explicite, le type est assigné au moment de la compilation et ne peut pas être changé.
 
 ### Propriétés des types
 
