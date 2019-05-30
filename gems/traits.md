@@ -2,7 +2,7 @@
 
 Une des forces de D est son système d'évaluation de fonction à la compilation (CTFE). En le combinant avec de l'introspection, on peut écrire des programmes très génériques et très optimisés.
 
-## Contrats expicites
+## Contrats explicites
 
 Les traits nous permettent de spécifier explicitement quel type de paramètres de schémas sont acceptés. Par exemple, `separerEnMots` peut travailler avec n'importe quel type de `string`:
 
