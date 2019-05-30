@@ -40,3 +40,25 @@ import std.range : chain, retro, front;
 - [L'UFCS dans _Programming in D_](http://ddili.org/ders/d.en/ufcs.html)
 - [_Uniform Function Call Syntax_](http://www.drdobbs.com/cpp/uniform-function-call-syntax/232700394) par Walter Bright
 - [`std.range`](http://dlang.org/phobos/std_range.html)
+
+## {SourceCode}
+
+```d
+import std.stdio : writefln, writeln;
+import std.algorithm.iteration : filter;
+import std.range : iota;
+
+void main()
+{
+    "Hello, %s".writefln("World");
+
+    10.iota // returns numbers from 0 to 9
+      // filter for even numbers
+      .filter!(a => a % 2 == 0)
+      .writeln(); // writes them to stdout
+
+    // Traditional style:
+    writeln(filter!(a => a % 2 == 0)
+                   (iota(10)));
+}
+```
