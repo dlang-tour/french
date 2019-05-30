@@ -49,7 +49,7 @@ struct Foo
 }
 ```
 
-N'importe quel type, fondamental ou non, peut être associé à une fonction. Dans cet exemple, la fonction `foo()` aura les attributs "Hello" (de type `string`) et `Bar` (de type `Bar` et de valeur `10`). Pour accéder à ces attributs, on utilise le *trait* (une fonctionnalité qui permet de récuper des informations sur notre programme pendant la compilation) intégré au compilateur `__traits(getAttributs, Foo)`  qui retourne un [`TypeTuple`](https://dlang.org/phobos/std_typetuple.html).
+N'importe quel type, fondamental ou non, peut être associé à une fonction. Dans cet exemple, la fonction `foo()` aura les attributs "Hello" (de type `string`) et `Bar` (de type `Bar` et de valeur `10`). Pour accéder à ces attributs, on utilise le *trait* (une fonctionnalité qui permet de récuper des informations sur notre programme pendant la compilation) intégré au compilateur `__traits(getAttributs, Foo)`  qui retourne une [`AliasSeq`](https://dlang.org/phobos/std_meta.html#AliasSeq).
 
 Les attributs personnalisés permettent d'améliorer la généricité du code en donnant la possibilité de générer le code le plus adapté à l'utilisation de la fonction ou de l'objet, et ce à la compilation.
 
