@@ -25,7 +25,7 @@ Habituellement, un bloc `unittest` contient des assertions (avec `assert`) qui t
 
 Les tests unitaires sont un bouclier puissant pour blinder ses applications. On appelle la mesure du nombre de lignes de code qui sont testées la _couverture du code_. C'est le ratio entre le nombre de lignes exécutées par les tests et le nombre de lignes existantes. Le compilateur DMD permet de générer facilement un rapport de la couverture de code en activant l'option `-cov`. Pour chaque module, un fichier `.lst` est généré, qui contient des statistiques détaillées sur la couverture.
 
-Comme le compilateur est capable de déduire les attributs pour du code schématisé automatiquement, il est courant d'ajouter des annotations aux tests unitaires, pour être sûr que ces annotations seront appliquées au code testé:
+Comme le compilateur est capable de déduire automatiquement les attributs pour du code schématisé, il est courant d'ajouter des annotations aux tests unitaires, pour être sûr que ces annotations seront appliquées au code testé:
 
 ```d
 unittest @safe @nogc nothrow pure
