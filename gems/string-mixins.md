@@ -7,7 +7,7 @@ mixin("int b = 5");
 assert(b == 5"); // fonctionne parfaitement
 ```
 
-`mixing` fonctionne aussi avec des chaînes construites dynamiquement tant qu'elles ne dépendent pas de valeurs connues uniquement à l'exécution.
+Le _mélangeage_ fonctionne aussi avec des chaînes construites dynamiquement tant qu'elles ne dépendent pas de valeurs connues uniquement à l'exécution.
 
 `mixin` associé avec la **CTFE**, que nous verrons dans le prochain chapitre, permet d'écrire des librairies impressionantes, comme [Pegged](https://github.com/PhilippeSigaud/Pegged) qui génère un parser à partir d'une grammaire sous forme de chaîne de caractères dans le code source.
 
