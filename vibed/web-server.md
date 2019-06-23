@@ -29,7 +29,7 @@ Les chemins de l'interface web personnalisée `WebService` seront automatiquemen
 * `getName()` gérera la requête `GET` sur `/name`
 * `postUsername()` gérera la requête `POST` sur `/username`
 
-Des chemins customisés peuvent être créés en associant un attribut `@path("/hello/world")` à une méthode. Les paramètres des requêtes `POST` peuvent être rendus accessibles dans la fonction en utilisant des paramètres avec le préfixe `_`. Il est aussi possible de spécifier les paramètres dans le chemin en lui-même:
+Des chemins personnalisés peuvent être créés en associant un attribut `@path("/hello/world")` à une méthode. Les paramètres des requêtes `POST` peuvent être rendus accessibles dans la fonction en utilisant des paramètres avec le préfixe `_`. Il est aussi possible de spécifier les paramètres dans le chemin en lui-même:
 
 ```d
 @path("/my/api/:id")
@@ -54,7 +54,7 @@ class WebService
         username_;
 
     /*
-    Par défault, les requêtes du chemin racine
+    Par défaut, les requêtes du chemin racine
     ("/") sont dirigés vers la méthode index
     */
     void index(HTTPServerResponse res)
@@ -77,8 +77,8 @@ class WebService
     /*
     L'attribut @path peut être utilisé pour
     personnaliser les redirections d'URL. Ici
-    les requêtes vers "/name" seront liés à la
-    méthode getName
+    les requêtes vers "/name" seront liées à 
+    la méthode getName
     */
     @path("/name")
     void getName(HTTPServerRequest req,
