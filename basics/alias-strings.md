@@ -4,7 +4,7 @@ Maintenant que nous savons ce que sont les tableaux, que nous avons jeté un cou
 
     alias string = immutable(char)[];
 
-Le terme `string` est défini par une instruction `alias` qui le défini comme une tranche de `immutable(char)`s. Cela signifie que, une fois qu'une `string` a été construite, son contenu ne changera plus. Et c'est d'ailleurs la deuxième nouveauté : bienvenue à UTF-8 `string`!
+Le terme `string` est défini par une instruction `alias` qui le définit comme une tranche de `immutable(char)`s. Cela signifie que, une fois qu'une `string` a été construite, son contenu ne changera plus. Et c'est d'ailleurs la deuxième nouveauté : bienvenue à UTF-8 `string`!
 
 Étant immutables, les `string`s peuvent parfaitement être partagées entre différents threads. Une `string` est une tranche, qu'on peut retrancher sans réallouer de mémoire. La fonction de la bibliothèque standard `std.algorithm.splitter` par exemple, peut séparer une chaîne de caractères en différentes parties séparées par un retour à ligne sans allouer de mémoire.
 
